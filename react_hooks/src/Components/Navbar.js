@@ -1,13 +1,15 @@
 import {Link} from 'react-router-dom';
+import './Navbar.css'
 
 import React from 'react'
 
 export default function Navbar() {
   return (
-    <> 
-        <Link to={'/'}> Home </Link>
+    <div className='nav'  > 
+        <Link to={'/'} > Home </Link>
         <Link to={'/usestatehook'}> Use State Hook </Link>
+        <Link to={'/contextapi'}> Context API</Link>
     
-    </>
+    </div>
   )
 }

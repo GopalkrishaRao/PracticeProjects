@@ -1,0 +1,13 @@
+.nav{
+    background: #1f1f1f;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav>*{
+    color: #fff;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 10px;
+}
+
