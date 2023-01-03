@@ -7,9 +7,8 @@ export default function Navbar() {
   return (
     <div className='nav'  > 
         <Link to={'/'} > Home </Link>
-        <Link to={'/usestatehook'}> Use State Hook </Link>
+        <Link to={'/hooks'}> Hook </Link>
         <Link to={'/contextapi'}> Context API</Link>
-    
     </div>
   )
 }
