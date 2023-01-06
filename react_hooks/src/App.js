@@ -16,6 +16,7 @@ function App() {
       {/* <Route path='/hooks' element={<HookNavbar/>} /> */}
       <Route path='/contextapi' element={<Context/>} />
     </Routes>
+    
    </>
   )
 }
