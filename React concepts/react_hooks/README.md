@@ -8,4 +8,5 @@
 * useState Hook
 * useEffect Hook
 * API handling with axios
-* Theam switch
+* Theam switch with context API?
+* To Do App with Context API
