@@ -3,10 +3,12 @@ import ThemeContext from './ThemeContext';
 const ThemeToggler = ()=>{
     const [themeMode, setThemeMode] = useContext(ThemeContext);
     return(
-        <div onClick={()=>{
+        <div>
+            <button onClick={()=>{
                 setThemeMode(themeMode === 'light' ? 'dark' : 'light');
-            }}
-            >
+            }}>
+            Theme Change
+            </button>
 
             <span>
                 {themeMode==='light' ? 'Turn Off': 'Light On'}

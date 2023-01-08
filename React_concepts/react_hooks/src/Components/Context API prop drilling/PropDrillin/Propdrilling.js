@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 // Prop drilling
-export default function Context() {
+export default function Propdrill() {
     const [brandname]= useState("Amezon")
   return (
 

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import Card from '../../Card/Card';
+import Card from '../Card/Card';
 
 export default function UseEffect() {
     
