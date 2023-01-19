@@ -1,0 +1,6 @@
+{
+    "quokka.automaticRestart": true,
+    "quokka.codeClipAutoUpload": true,
+    "quokka.compactMessageOutput": true,
+    "quokka.showValueOnMultilineSelection": true
+}
