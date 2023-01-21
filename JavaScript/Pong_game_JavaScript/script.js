@@ -20,7 +20,11 @@ function update(time){
 
         // check weather ball touches wall insted of player paddle
         if(isLose()) handleLost()
-            
+
+        // background color change
+        const hue = parseFloat( getComputedStyle(document.documentElement).getPropertyValue('--hue'))
+        
+        document.documentElement.style.setProperty('--hue', hue + delta*0.01)
     }
     lastTime = time
     window.requestAnimationFrame(update)
