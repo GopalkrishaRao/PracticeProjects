@@ -1,6 +1,6 @@
 import { getInputDirection } from "./input.js";
 
-export const snakeSpeed=2;
+export const snakeSpeed=5;
 const snakeBody = [{x:11, y:11}];
 let newSegment =0;
 
@@ -47,6 +47,6 @@ function addSegment(){
         snakeBody.push({...snakeBody[snakeBody.length-1]})
     }
 
-    // prevent continious growth 
+    // prevent continious expansion of snake body
     newSegment=0
 }
