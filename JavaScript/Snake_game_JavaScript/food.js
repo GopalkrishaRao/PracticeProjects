@@ -12,7 +12,6 @@ export function update(){
     // create a food in differt location
         food = getRandomFoodPosition();
     };
-
 }
 
 export function draw(gameBoard){
@@ -21,7 +20,6 @@ export function draw(gameBoard){
     foodElement.style.gridColumnStart = food.x;
     foodElement.classList.add('food');
     gameBoard.appendChild(foodElement);
-
 };
 
 function getRandomFoodPosition(){
