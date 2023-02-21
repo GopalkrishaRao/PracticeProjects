@@ -9,11 +9,11 @@ import todoReducer from './components/context/reducer';
 const App = ()=>{
   const [todos, dispatch] = useReducer(todoReducer, [])
   return (
-    <TodoContext.provider value={{todos, dispatch}}>
+    <TodoContext.Provider value={{todos, dispatch}}>
       <Container fluid>
         <h1>Todo App with Context API</h1>
       </Container>
-    </TodoContext.provider>
+    </TodoContext.Provider>
   )
 }
 
