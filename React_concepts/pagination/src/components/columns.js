@@ -1,18 +1,26 @@
+import {format} from 'date-fns';
+import { ColumnFilter } from './ColumnFilter';
+
 export const COLUMNS = [
     {
        Header: 'Id',
        Footer: 'Id',
-       accessor: 'id'
+       accessor: 'id',
+       Filter: ColumnFilter,
+      //  to remove column search from single colum
+       disableFilters: true
     },
     {
        Header: 'First Name',
        Footer: 'First Name',
-       accessor: 'first_name'
+       accessor: 'first_name',
+       Filter: ColumnFilter
     },
     {
        Header: 'Last Name',
        Footer: 'Last Name',
-       accessor:'last_name'
+       accessor:'last_name',
+       Filter: ColumnFilter
     },
    //  {
    //      Header: 'E-mail',
@@ -22,7 +30,9 @@ export const COLUMNS = [
     {
        Header: 'Date of Birth',
        Footer: 'Date of Birth',
-       accessor:'date_of_birth'
+       accessor:'date_of_birth',
+       Cell: ({value})=>{return format(new Date(value), 'dd/MM/yyyy' )},
+       Filter: ColumnFilter
     },
    //  {
    //      Header: 'Age',
@@ -32,12 +42,14 @@ export const COLUMNS = [
     {
        Header: 'Country',
        Footer: 'Country',
-       accessor:'country'
+       accessor:'country',
+       Filter: ColumnFilter
     },
     {
        Header: 'Phone Number',
        Footer: 'Phone Number',
-       accessor:'phone'
+       accessor:'phone',
+       Filter: ColumnFilter
     }
 ];
 
