@@ -6,7 +6,9 @@ export const COLUMNS = [
        Header: 'Id',
        Footer: 'Id',
        accessor: 'id',
-       Filter: ColumnFilter,
+      // Column filter added by use memo hook in FilteringTable.js 
+      //  Filter: ColumnFilter,
+
       //  to remove column search from single colum
        disableFilters: true
     },
@@ -14,13 +16,13 @@ export const COLUMNS = [
        Header: 'First Name',
        Footer: 'First Name',
        accessor: 'first_name',
-       Filter: ColumnFilter
+      //  Filter: ColumnFilter
     },
     {
        Header: 'Last Name',
        Footer: 'Last Name',
        accessor:'last_name',
-       Filter: ColumnFilter
+      //  Filter: ColumnFilter
     },
    //  {
    //      Header: 'E-mail',
@@ -32,7 +34,7 @@ export const COLUMNS = [
        Footer: 'Date of Birth',
        accessor:'date_of_birth',
        Cell: ({value})=>{return format(new Date(value), 'dd/MM/yyyy' )},
-       Filter: ColumnFilter
+      //  Filter: ColumnFilter
     },
    //  {
    //      Header: 'Age',
@@ -43,13 +45,13 @@ export const COLUMNS = [
        Header: 'Country',
        Footer: 'Country',
        accessor:'country',
-       Filter: ColumnFilter
+      //  Filter: ColumnFilter
     },
     {
        Header: 'Phone Number',
        Footer: 'Phone Number',
        accessor:'phone',
-       Filter: ColumnFilter
+      //  Filter: ColumnFilter
     }
 ];
 

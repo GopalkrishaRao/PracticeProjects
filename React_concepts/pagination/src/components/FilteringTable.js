@@ -5,6 +5,7 @@ import MOCK_DATA from './MOCK_DATA.json';
 import {COLUMNS, GROUPED_COLUMNS} from './columns';
 import './table.css';
 import { GlobalFilter } from './GlobalFilter';
+import { ColumnFilter } from './ColumnFilter';
 
 
 export const FilteringTable = () => {
@@ -13,6 +14,12 @@ export const FilteringTable = () => {
     // const columns = useMemo(() => GROUPED_COLUMNS, []);
     const data = useMemo(()=>MOCK_DATA, []);
 
+    const defaultColumn = useMemo(()=>{
+        return {
+            Filter: ColumnFilter
+        }
+    },[])
+
    const tableInstance = useTable({
         // rows
         // columns: columns, (for ES6 and above version can be directly writtn as colums)
@@ -20,7 +27,10 @@ export const FilteringTable = () => {
 
         // colums
         // data: data
-        data
+        data,
+
+        // column filter
+        defaultColumn
    }, 
    useFilters,
    useGlobalFilter)
