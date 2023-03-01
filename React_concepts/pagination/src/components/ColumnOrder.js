@@ -1,13 +1,12 @@
 import React from 'react';
 import { useMemo } from 'react';
-import {useTable, useRowSelect} from 'react-table';
-import MOCK_DATA from '../MOCK_DATA.json';
-import {COLUMNS, GROUPED_COLUMNS} from '../columns';
-import '../../components/table.css';
-import { Checkbox } from './Checkbox';
+import {useTable, useColumnOrder} from 'react-table';
+import MOCK_DATA from './MOCK_DATA.json';
+import {COLUMNS, GROUPED_COLUMNS} from './columns';
+import './table.css';
 
 
-export const RowSelection = () => {
+export const ColumnOrder = () => {
     const columns = useMemo(() => COLUMNS, []);
     // for grouped column
     // const columns = useMemo(() => GROUPED_COLUMNS, []);
@@ -22,26 +21,19 @@ export const RowSelection = () => {
         // data: data
         data
    },
-        useRowSelect,
-        (hooks)=>{
-            hooks.visibleColumns.push((columns)=>{
-                return [
-                    {
-                        id: 'selection',
-                        Header: ({ getToggleAllRowsSelectedProps})=> (
-                            <Checkbox {...getToggleAllRowsSelectedProps()}/>
-                        ),
-                        Cell: ({row})=>
-                            <Checkbox {...row.getToggleRowSelectedProps()}/>
-                        
-                    }, 
-                    ...columns
-                ]
-            })
-        }
+   useColumnOrder
    )
 
-
+   const changeOrder = ()=>{
+    setColumnOrder([
+        'id', 
+        'first_name',
+        'last_name',
+        'phone',
+        'country',
+        'date_of_birth'
+    ])
+   }
 
 //    table destructuring
 const {
@@ -49,15 +41,17 @@ const {
         getTableBodyProps,
         headerGroups,
         footerGroups,
+        setColumnOrder,
         rows,
-        prepareRow,
-        selectedFlatRows,
+        prepareRow
         }= tableInstance;
 
-        //    using only 10 rows of data for demostration
-   const firstPageRows = rows.slice(0,10)
   return (
     <>
+    <button onClick={changeOrder}>
+        Change Column Order
+    </button>
+
     <table {...getTableProps()}>
         <thead>
             {
@@ -74,7 +68,7 @@ const {
         </thead>
         <tbody {...getTableBodyProps()}>
             {
-                firstPageRows.map((row) =>{
+                rows.map(row =>{
                     prepareRow(row)
                     return(
                         <tr{...row.getRowProps()}>
@@ -119,19 +113,7 @@ const {
             
 
         </tfoot>
-        
     </table>
-    <pre>
-            <code>
-            {JSON.stringify(
-                {
-                    selectdFlatRows: selectedFlatRows.map((row)=> row.original),
-                },
-                null,
-                2
-            )}
-            </code>
-        </pre>
     
     </>
   )
