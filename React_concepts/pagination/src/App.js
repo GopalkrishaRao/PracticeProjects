@@ -4,6 +4,7 @@ import { ColumnOrder } from './components/ColumnOrder';
 // import { FilteringTable } from './components/FilteringTable';
 // import { PaginationTable } from './components/PaginationTbale';
 import { RowSelection } from './components/Row_selection/RowSelection';
+import { StickyTable } from './components/StickyTable/StickyTable';
 // import { BasicTable } from './components/BasicTable';
 // import { SortingTable } from './components/SortingTable';
 
@@ -16,7 +17,8 @@ function App() {
       {/* <PaginationTable/> */}
       {/* <RowSelection/> */}
       {/* <ColumnOrder/> */}
-      <ColumnHiding/>
+      {/* <ColumnHiding/> */}
+      <StickyTable/>
 
     </div>
   );
