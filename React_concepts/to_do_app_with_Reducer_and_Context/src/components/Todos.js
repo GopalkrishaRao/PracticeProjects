@@ -22,7 +22,8 @@ import { TodoContext
                             type:REMOVE_TODO,
                             payload: todo.id
                         })
-                    }}><FaCheckDouble/></span>
+                    }}><FaCheckDouble/>
+                    </span>
 
                 </ListGroupItem>
             ))}
