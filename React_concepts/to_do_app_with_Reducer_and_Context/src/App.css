@@ -8,12 +8,12 @@
 
 body {
   position: relative;
-  background-color: rgb(104, 104, 104);
+  background: #020202;
 }
 h1 {
   text-align: center;
   margin-top: 20px;
-  color: aliceblue;
+  color: rgb(5, 5, 5);
 }
 form {
   position: fixed;
@@ -39,6 +39,6 @@ form {
 }
 
 .completedTodo {
-  background-color: darkgray;
+  background-color: rgb(116, 114, 114);
   text-decoration: line-through;
 }
