@@ -6,6 +6,7 @@ body {
     align-items: center;
     margin: 0;
     background-color: #1f1f1f;
+    background-image: url('./images.jpg');
   }
 
   #game-board {
