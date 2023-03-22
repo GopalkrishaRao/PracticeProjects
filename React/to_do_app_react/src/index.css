@@ -20,7 +20,10 @@ label {
 :root {
   --_hue: 245;
   --_size: 1.8rem;
-  --_radius: 0.2em;
+  /* --_radius: 0.2em; */
+  --_radius: 50%;
+  --box_radius:6px;
+  /* Change radius to 50% add call in enter task and and saved task a class name and change border radiu to 0.2em */
   --_tspeed_fast: 180ms;
   --_tspeed_slow: 300ms;
   --_ttype_squish: cubic-bezier(0.86, -0.1, 0.27, 1.15);
@@ -198,7 +201,7 @@ hr {
 
 .input {
   border: none;
-  border-radius: var(--_radius);
+  border-radius: var(--box_radius);
   padding: 0.35em 0.55em;
   width: 100%;
   background-color: hsl(var(--muted));

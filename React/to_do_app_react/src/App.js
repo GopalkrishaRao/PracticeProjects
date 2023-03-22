@@ -54,7 +54,7 @@ function App() {
   return (
     <div className="container">
       <header>
-        <h1>My Task List</h1>
+        <h1>My To-Do List</h1>
       </header>
       {
         isEditing && (
