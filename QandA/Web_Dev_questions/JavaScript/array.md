@@ -1,13 +1,13 @@
 ## pop():
 * The pop() method removes the last element from an array:
 #
-## pop():
+## push():
 * The push() method adds a new element to an array (at the end)
 #
 ## shift()
 * The shift() method removes the first array element and "shifts" all other elements to a lower index.
 #
-## shift()
+## unshift()
 * The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
 #
 ## delete():
