@@ -18,6 +18,16 @@
 * In CSS, the term "box model" is used when talking about design and layout.
 * The CSS box model is essentially a box that wraps around every HTML element. It consists of: margins, borders, padding, and the actual content. 
 
+#
+## Margin vs Padding
+| Code | Margin | Padding |
+| --- | --- | --- |
+| Definition | The outer space of an element i.e. margin is the space outside the border. | The inner space of an element i.e.padding is space inside the element’s border. |
+| Allowed Values | It can be negative or any float number. | It does not allow negative values. |
+| Setting to "auto" | We can set the margin to auto. | We cannot set the padding to auto. |
+| Styling Effects | Styling of an element such as background color does not affect the margin. | Padding is affected by the styling of an element, such as background color. |
+
+
 
 #
 ## Block Level  vs Inline Elements
@@ -112,6 +122,45 @@ body {
 
 #
 ## [CSS Selectors](https://trello.com/c/3hHqFZKH/52-css-selectors)
+
+| Selector                | Description                                                                                         |
+|-------------------------|-----------------------------------------------------------------------------------------------------|
+| [attribute*=value]      | Select those elements whose attribute value contains the specified substring str.                 |
+| [attribute=value]       | Select those elements whose attribute value is equal to “value”.                                  |
+| [attribute$=value]      | Select those elements whose attribute value ends with a specified value “value”.                   |
+| [attribute\|=value]     | Select those elements whose attribute value is equal to “value”. Whose attribute value started with “value” immediately followed by hyphen (-). |
+| [attribute~=value]      | Select those elements whose attribute value contains a specified word.                             |
+| [attribute^=value]      | Select those elements whose attribute value begins with the given attribute.                       |
+| #id                     | Set the style of the given id. The id attribute is the unique identifier in an HTML document.      |
+| *                       | Select all the elements in an HTML document.                                                       |
+| :active                 | It is used in styling an active link on the web page. Style display when the user clicks on the link. |
+| :after                  | It is used to add the same content multiple times after the content of other elements.             |
+| :before                 | It is used to add the same content multiple times before the content of other elements.            |
+| :checked                | Select all checked elements in the input tag and radio buttons.                                     |
+| .class                  | Select all elements which belong to a particular class attribute.                                  |
+| :default                | Set a default element in a group of the same type of element in a form.                             |
+| :disabled               | This property is mostly used on the form elements.                                                 |
+| element                 | Select HTML elements that are required to be styled.                                                |
+| element element         | Select elements inside the elements.                                                                |
+| element, element        | It is used to style all comma-separated elements with the same style.                               |
+| element1 ~ element2     | It is used to match the occurrences of element2 followed by element1.                                |
+| :empty                  | Select that element that does not contain any children (including the text node).                   |
+| :enabled                | Set the background color in the enabled element in a form.                                          |
+| :first-child            | Select those elements which are the first-child elements.                                           |
+| :first-of-type          | It is used to target the first child of every element of its parent.                                 |
+| ::first-letter          | Apply the style to the first letter of the first line of a block-level element.                     |
+| ::first-line            | Apply style to the first line of a block-level element.                                             |
+| :focus                  | It is used to target the focused element.                                                           |
+| :hover                  | Style elements when the mouse hovers over them.                                                      |
+| :indeterminate          | Select any form elements that are in an indeterminate state.                                         |
+| :in-range               | Select all elements that are given within a particular range value.                                  |
+| :invalid                | Select every form element that does not validate according to the elements.                          |
+| :lang(language)         | Target the element which is based on language attributes for a specific value.                       |
+| :last-child             | Target the last child element of its parent for styling.                                             |
+| :last-of-type           | Target the last child element of the same type as its parent for styling.                             |
+| :link                   | Target the unvisited link for styling, not the links which are already visited.                      |
+| :not(selector)          | Style every element that is not specified by the selector
+
 
 #
 ## [Flex box](https://trello.com/c/3hHqFZKH/52-css-selectors)
