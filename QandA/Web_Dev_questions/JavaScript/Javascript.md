@@ -441,3 +441,14 @@ document.getElementById("innerDiv").addEventListener("click", function() {
 * Attributes are defined on the HTML markup whereas properties are defined on the DOM.
 * An attribute is a value that is specified in the HTML markup and is used to initialize an element when the page is loaded. Attributes are defined in the opening tag of an element, and can be set to any valid value, including strings, numbers, and Boolean values. Examples of attributes include id, class, href, src, and style. Attributes are defined as strings, even if their values are numeric or boolean.
 * A property, on the other hand, is a value that is stored in the DOM object of an element and reflects the current state of that element. Properties can be accessed and modified at runtime using JavaScript, and they are often used to interact with an element dynamically. Examples of properties include innerHTML, textContent, value, and checked. Properties can have any data type, including objects, arrays, functions, and more.
+#
+## [Pure Function](https://www.scaler.com/topics/pure-function-in-javascript/):
+* A pure function in JavaScript is a function that returns the same result if the same arguments(input) are passed in the function.
+```
+function operationAdd(a, b){ 
+    return a+b;
+}
+
+  operationAdd(2,5),
+  
+```
