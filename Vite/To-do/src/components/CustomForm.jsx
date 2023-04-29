@@ -13,7 +13,8 @@ export const CustomForm = ({addTask}) => {
     let dd = today.getDate();
     if (dd < 10) dd = '0' + dd;
     if (mm < 10) mm = '0' + mm;
-    return (   dd + '-' + mm + '-' + yyyy)
+    // return (   dd + '-' + mm + '-' + yyyy)
+    return Date.now()
   }
 
     const handleFormSubmit = (e)=>{

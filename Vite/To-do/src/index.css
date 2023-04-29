@@ -241,3 +241,19 @@ hr {
   border: 0.1em solid hsl(var(--accent) / 0.3);
   box-shadow: 0 -1em 3em hsl(var(--muted)), 0 1em 3em hsl(var(--accent) / 0.2);
 }
+
+
+/* Search Filter CSS */
+.searchFilter{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  justify-content: start;
+
+}

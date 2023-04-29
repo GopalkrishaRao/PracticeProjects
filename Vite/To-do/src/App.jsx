@@ -4,6 +4,7 @@ import { CustomForm } from "./components/CustomForm";
 import { TaskList } from "./components/TaskList";
 import Editform from "./components/Editform";
 import useLocalStorage from "./Hooks/useLocalStorage";
+import SearchFilter from "./components/SearchFilter";
 
 function App() {
 
@@ -50,6 +51,14 @@ function App() {
     setPreviousFocus(document.activeElement)
   }
 
+  const search =()=>{
+    return
+  };
+
+  const filter = ()=>{
+
+  };
+
   return (
     <>
     <div className="container">
@@ -65,6 +74,10 @@ function App() {
 
       }
       <CustomForm addTask = {addTask}/>
+      <SearchFilter 
+        search={search}
+        filter={filter}
+        />
       {tasks && (
         <TaskList
            tasks = {tasks} 
