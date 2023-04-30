@@ -1,17 +1,20 @@
 import React, { useState } from "react"
+import useLocalStorage from "./Hooks/useLocalStorage";
+import { todoContext } from "./context/context";
 
 import { CustomForm } from "./components/CustomForm";
 import { TaskList } from "./components/TaskList";
 import Editform from "./components/Editform";
-import useLocalStorage from "./Hooks/useLocalStorage";
 import SearchFilter from "./components/SearchFilter";
+
 
 function App() {
 
   const [tasks, setTasks] = useLocalStorage('react-todo.tasks', []);
-  const [editedTask, setEditedTask] = useState(null)
-  const [isEditing, setIsEditing] = useState(false)
-  const [previousFoucs, setPreviousFocus] = useState(false)
+  const [editedTask, setEditedTask] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [previousFoucs, setPreviousFocus] = useState(false);
+  const [searchVal, setSearchVal]=useState("");
 
 
   const addTask = (task) =>{
@@ -51,43 +54,32 @@ function App() {
     setPreviousFocus(document.activeElement)
   }
 
-  const search =()=>{
-    return
+  const search = (task) =>{
+    setSearchVal(task.target.value)
   };
 
   const filter = ()=>{
-
   };
 
   return (
     <>
+    <todoContext.Provider value={
+      {tasks,deleteTask,
+       toggleTask,editedTask, enterEditMode, updateTask, closeEditMode, addTask}
+       }>
     <div className="container">
       <header>
         <h1>To Do List</h1>
       </header>
-      { isEditing && (<Editform
-                      editedTask={editedTask}
-                      updateTask={updateTask}
-                      closeEditMode={closeEditMode}
-
-                      />) 
-
-      }
-      <CustomForm addTask = {addTask}/>
+      { isEditing && (<Editform/>) }
+      <CustomForm />
       <SearchFilter 
-        search={search}
+        searchVal={searchVal}
         filter={filter}
         />
-      {tasks && (
-        <TaskList
-           tasks = {tasks} 
-           deleteTask={deleteTask}
-           toggleTask = {toggleTask}
-           enterEditMode={enterEditMode}
-           />
-        )}
+      {tasks && (<TaskList/>)}
     </div>
-    
+    </todoContext.Provider>
     </>
   )
 }

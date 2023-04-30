@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
-
+import { useContext, useEffect, useState } from "react";
 import { CheckIcon } from '@heroicons/react/24/solid'
+import { todoContext } from "../context/context";
 
-const Editform = ({editedTask, updateTask, closeEditMode}) => {
+const Editform = () => {
+  const {updateTask, closeEditMode, editedTask} = useContext(todoContext);
+
   const [updatedTask, setUpdatedTask] = useState(editedTask.name);
 
   useEffect(()=>{

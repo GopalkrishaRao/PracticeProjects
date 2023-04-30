@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 // styles
 import styles from './TaskItem.module.css';
@@ -7,14 +7,18 @@ import styles from './TaskItem.module.css';
 import { CheckIcon  } from '@heroicons/react/24/outline';
 import { PencilSquareIcon  } from '@heroicons/react/24/outline';
 import { TrashIcon } from '@heroicons/react/24/outline';
+import { todoContext } from '../context/context';
 
-const TaskItem = ({ task, deleteTask,toggleTask, enterEditMode }) => {
+const TaskItem = ({ task}) => {
+
+// context api
+const { deleteTask, enterEditMode,toggleTask } = useContext(todoContext)
+
   const [isChecked, setIsChecked ] = useState(task.checked);
 
   const handleCheckboxChange = (e) =>{
     setIsChecked(!isChecked);
     toggleTask(task.id)
-
   }
 
   return (
@@ -55,7 +59,6 @@ const TaskItem = ({ task, deleteTask,toggleTask, enterEditMode }) => {
         >
           <TrashIcon width={24} height={24} />
         </button>
-
       </div>
     </li>
   )

@@ -1,7 +1,8 @@
-import React from 'react'
-import { AdjustmentsHorizontalIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline'
-function SearchFilter({search, filter}) {
-   
+import React, { useState } from 'react'
+import { AdjustmentsHorizontalIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+
+function SearchFilter({searchVal, filter}) {
+    
   return (
     <>
     {/* css from index.css */}
@@ -12,7 +13,8 @@ function SearchFilter({search, filter}) {
             placeholder="Update Task"
             id='search'
             className='input'
-            onInput={search}
+            // value={seaVal}
+            onChange={(e)=>setSerVal(e.target.value)}
              />
             
         <button className='btn'onClick={filter}>
