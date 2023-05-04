@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import useLocalStorage from "./Hooks/useLocalStorage";
 import { todoContext } from "./context/context";
 
@@ -6,11 +6,13 @@ import { CustomForm } from "./components/CustomForm";
 import { TaskList } from "./components/TaskList";
 import Editform from "./components/Editform";
 import SearchFilter from "./components/SearchFilter";
+import FilteredValue from "./components/FilteredValue";
 
 
 function App() {
 
   const [tasks, setTasks] = useLocalStorage('react-todo.tasks', []);
+  
   const [editedTask, setEditedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [previousFoucs, setPreviousFocus] = useState(false);
@@ -19,11 +21,11 @@ function App() {
 
   const addTask = (task) =>{
     setTasks(prevState=>[...prevState, task])
-  }
+  };
 
   const deleteTask = (id)=>{
     setTasks(prevState=>prevState.filter(t=>t.id!==id))
-  }
+  };
 
   const toggleTask = (id)=>{
     setTasks(prevState => prevState.map(t=>(
@@ -31,7 +33,7 @@ function App() {
         ? {...t, checked: !t.checked}
         : t
       )))
-  }
+  };
   
   const updateTask = (task)=>{
     setTasks(prevState => prevState.map(t=>(
@@ -40,32 +42,26 @@ function App() {
         : t
   )))
    closeEditMode()
-  }
+  };
 
   const closeEditMode=()=> {
     setIsEditing(false);
     previousFoucs.focus()
-
-  }
+  };
 
   const enterEditMode = (task) =>{
     setEditedTask(task);
     setIsEditing(true);
     setPreviousFocus(document.activeElement)
-  }
-
-  const search = (task) =>{
-    setSearchVal(task.target.value)
   };
 
-  const filter = ()=>{
-  };
+
 
   return (
     <>
     <todoContext.Provider value={
-      {tasks,deleteTask,
-       toggleTask,editedTask, enterEditMode, updateTask, closeEditMode, addTask}
+      {tasks, setTasks,deleteTask,
+       toggleTask,editedTask, enterEditMode, updateTask, closeEditMode, addTask, setSearchVal}
        }>
     <div className="container">
       <header>
@@ -73,11 +69,10 @@ function App() {
       </header>
       { isEditing && (<Editform/>) }
       <CustomForm />
-      <SearchFilter 
-        searchVal={searchVal}
-        filter={filter}
-        />
-      {tasks && (<TaskList/>)}
+      <SearchFilter/>
+      {searchVal ? (<FilteredValue/>) : (<TaskList/>) }
+
+      {/* {tasks && (<TaskList/>)} */}
     </div>
     </todoContext.Provider>
     </>

@@ -1,31 +1,37 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { AdjustmentsHorizontalIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
-function SearchFilter({searchVal, filter}) {
-    
+import { todoContext } from '../context/context';
+
+function SearchFilter() {
+    const {tasks, setTasks,searchVal, setSearchVal} = useContext(todoContext)
+
   return (
     <>
     {/* css from index.css */}
     <div className='searchFilter'>
+
+      {/* Search Section */}
      <div className='search'>
+
         <input 
             type="text"
-            placeholder="Update Task"
+            placeholder="Search Task"
             id='search'
             className='input'
-            // value={seaVal}
-            onChange={(e)=>setSerVal(e.target.value)}
+            value={searchVal}
+            onChange={(e)=>setSearchVal(e.target.value)}
              />
-            
-        <button className='btn'onClick={filter}>
+
+        <button className='btn'>
         <MagnifyingGlassIcon strokeWidth={2} height={24} width={24}/>
         </button>
-        
     </div> 
+
+    {/* Filter Section */}
     <button className='btn'>
             <AdjustmentsHorizontalIcon strokeWidth={2} height={24} width={24}/>
     </button>  
-   
    </div>
     </>
   )

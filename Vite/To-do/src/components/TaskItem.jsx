@@ -12,7 +12,7 @@ import { todoContext } from '../context/context';
 const TaskItem = ({ task}) => {
 
 // context api
-const { deleteTask, enterEditMode,toggleTask } = useContext(todoContext)
+const {  deleteTask, enterEditMode,toggleTask } = useContext(todoContext)
 
   const [isChecked, setIsChecked ] = useState(task.checked);
 

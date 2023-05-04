@@ -1,11 +1,10 @@
 import { useContext, useState } from "react";
 
-import { PlusIcon } from '@heroicons/react/24/solid'
+import { PlusIcon } from '@heroicons/react/24/solid';
 import { todoContext } from "../context/context";
 
 export const CustomForm = () => {
   const [task, setTask] = useState("");
-  
   const {addTask} = useContext(todoContext)
 
   // get date in dd mm yyyy format
