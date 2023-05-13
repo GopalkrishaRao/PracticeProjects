@@ -4,7 +4,7 @@ import { AdjustmentsHorizontalIcon, MagnifyingGlassIcon } from '@heroicons/react
 import { todoContext } from '../context/context';
 
 function SearchFilter() {
-    const {tasks, setTasks,searchVal, setSearchVal} = useContext(todoContext)
+    const {searchVal, setSearchVal} = useContext(todoContext)
 
   return (
     <>

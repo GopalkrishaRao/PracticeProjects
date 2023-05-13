@@ -1,26 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { todoContext } from '../context/context';
-import { useContext } from 'react';
 
 export default function FilteredValue() {
-    const {tasks, searchVal} = useContext(todoContext)
-    
-    const filteredTasks = tasks.filter(task =>
-      task.toLowerCase().includes(searchVal)
-    );
-  
+  const { tasks, searchVal } = useContext(todoContext);
+
+  // Filter based on 'name' property
+  const filteredData = tasks.filter((t) => t.name.includes(searchVal)); 
 
   return (
-    <>
     <div>
-        {filteredTasks.length > 0 ? (
-          filteredTasks.map((task) => (
-            <div key={task}>{task}</div>
-          ))
-        ) : (
-          <h1>No result found!...</h1>
-        )}
-      </div>
-    </>
-  )
+      {filteredData.length === 0 ? 
+        (<p>No matching results found.</p>) : 
+        (<div>
+          {filteredData.map((t) => {
+          // Use 'id' as key and display 'name' property
+                return <h1 key={t.id}> {t.name}</h1>; 
+              })}
+          </div>) 
+      }
+    </div>
+  );
 }

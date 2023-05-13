@@ -16,8 +16,8 @@ function App() {
   const [editedTask, setEditedTask] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [previousFoucs, setPreviousFocus] = useState(false);
+  
   const [searchVal, setSearchVal]=useState("");
-
 
   const addTask = (task) =>{
     setTasks(prevState=>[...prevState, task])
@@ -55,13 +55,11 @@ function App() {
     setPreviousFocus(document.activeElement)
   };
 
-
-
   return (
     <>
     <todoContext.Provider value={
       {tasks, setTasks,deleteTask,
-       toggleTask,editedTask, enterEditMode, updateTask, closeEditMode, addTask, setSearchVal}
+       toggleTask,editedTask, enterEditMode, updateTask, closeEditMode, addTask,searchVal, setSearchVal}
        }>
     <div className="container">
       <header>
