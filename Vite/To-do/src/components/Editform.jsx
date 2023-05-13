@@ -3,7 +3,7 @@ import { CheckIcon } from '@heroicons/react/24/solid'
 import { todoContext } from "../context/context";
 
 const Editform = () => {
-  const {closeEditMode, editedTask} = useContext(todoContext);
+  const {closeEditMode, editedTask, updateTask} = useContext(todoContext);
 
   const [updatedTask, setUpdatedTask] = useState(editedTask.name);
 

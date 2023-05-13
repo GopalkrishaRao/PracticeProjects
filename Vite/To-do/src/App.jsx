@@ -6,7 +6,7 @@ import { CustomForm } from "./components/CustomForm";
 import { TaskList } from "./components/TaskList";
 import Editform from "./components/Editform";
 import SearchFilter from "./components/SearchFilter";
-import FilteredValue from "./components/FilteredValue";
+import SearchValue from "./components/SearchValue";
 
 
 function App() {
@@ -68,9 +68,7 @@ function App() {
       { isEditing && (<Editform/>) }
       <CustomForm />
       <SearchFilter/>
-      {searchVal ? (<FilteredValue/>) : (<TaskList/>) }
-
-      {/* {tasks && (<TaskList/>)} */}
+      {searchVal ? (<SearchValue/>) : (<TaskList/>) }
     </div>
     </todoContext.Provider>
     </>
