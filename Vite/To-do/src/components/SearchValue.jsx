@@ -39,10 +39,12 @@ export default function SearchdValue() {
     <ul className={styles.tasks} ref={searchInputRef}>
     {filteredData.length === 0 ? 
         (<h1>No matching results found...!!</h1>) : 
-        (<div> {filteredData.map(task => (
+        (<div> 
+          <h1>Search Results</h1>
+          {filteredData.map(task => (
             <TaskItem
                 key={task.id}
-                task={task}
+                task={task}  
             />))
           }
           </div>) 
@@ -50,4 +52,4 @@ export default function SearchdValue() {
     </ul>
    </>
   );
-}
+};

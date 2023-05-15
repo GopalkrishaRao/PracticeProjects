@@ -9,7 +9,7 @@ import { PencilSquareIcon  } from '@heroicons/react/24/outline';
 import { TrashIcon } from '@heroicons/react/24/outline';
 import { todoContext } from '../context/context';
 
-const TaskItem = ({ task}) => {
+const TaskItem = ({task}) => {
 
 // context api
 const {  deleteTask, enterEditMode,toggleTask } = useContext(todoContext)
@@ -43,8 +43,9 @@ const {  deleteTask, enterEditMode,toggleTask } = useContext(todoContext)
         </label>
       </div>
       <div className={styles["task-group"]}>
-        <span>{task.timeStamp}</span>
-        <button
+        {/* <span>{task.timeStamp}</span> */}
+       
+         <button
           className='btn'
           aria-label={`Update ${task.name} Task`}
           onClick={()=>enterEditMode(task)}

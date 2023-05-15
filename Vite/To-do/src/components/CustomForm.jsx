@@ -8,6 +8,8 @@ export const CustomForm = () => {
   const {addTask} = useContext(todoContext)
 
   // get date in dd mm yyyy format
+
+    
   const getToday= ()=>{
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -15,7 +17,21 @@ export const CustomForm = () => {
     let dd = today.getDate();
     if (dd < 10) dd = '0' + dd;
     if (mm < 10) mm = '0' + mm;
-    // return (   dd + '-' + mm + '-' + yyyy)
+    let date = dd + '-' + mm + '-' + yyyy;
+
+    // time
+    let hr = today.getHours();
+    let min = today.getMinutes();
+    let sec = today.getSeconds();
+    if (hr < 10) hr = '0' + hr;
+    if (min < 10) min = '0' + min;
+    if (sec < 10) sec = '0' + sec;
+    let time = hr + ":" + min + ":" + sec;
+    
+    // return (<div style={{color:"red"}}>
+    //     <div>{date}</div>
+    //     <div>{time}</div>
+    //   </div>)
     return Date.now()
   }
 
@@ -39,12 +55,12 @@ export const CustomForm = () => {
         <div className="wrapper">
             <input 
               type="text"
+              required
               id="task"
               className="input"
-              value={task}
+              value={task.trim()}
               onInput={(e)=>setTask(e.target.value)}
               placeholder="Add task"
-              required
               maxLength={60}
               autoFocus
               />
