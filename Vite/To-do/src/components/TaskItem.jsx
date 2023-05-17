@@ -43,8 +43,8 @@ const {  deleteTask, enterEditMode,toggleTask } = useContext(todoContext)
         </label>
       </div>
       <div className={styles["task-group"]}>
-        {/* <span>{task.timeStamp}</span> */}
-       
+        <span>{task.timeStamp}</span>
+
          <button
           className='btn'
           aria-label={`Update ${task.name} Task`}

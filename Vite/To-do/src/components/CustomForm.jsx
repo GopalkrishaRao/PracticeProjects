@@ -9,31 +9,27 @@ export const CustomForm = () => {
 
   // get date in dd mm yyyy format
 
+  const getCurrentDateTime = () => {
+    const timestamp = Date.now();
+    const currentDate = new Date(timestamp);
     
-  const getToday= ()=>{
-    const today = new Date();
-    const yyyy = today.getFullYear();
-    let mm = today.getMonth() + 1; // Months start at 0!
-    let dd = today.getDate();
+    const yyyy = currentDate.getFullYear();
+    let mm = currentDate.getMonth() + 1; // Months start at 0!
+    let dd = currentDate.getDate();
     if (dd < 10) dd = '0' + dd;
     if (mm < 10) mm = '0' + mm;
-    let date = dd + '-' + mm + '-' + yyyy;
-
-    // time
-    let hr = today.getHours();
-    let min = today.getMinutes();
-    let sec = today.getSeconds();
+    const date = dd + '-' + mm + '-' + yyyy;
+  
+    let hr = currentDate.getHours();
+    let min = currentDate.getMinutes();
+    let sec = currentDate.getSeconds();
     if (hr < 10) hr = '0' + hr;
     if (min < 10) min = '0' + min;
     if (sec < 10) sec = '0' + sec;
-    let time = hr + ":" + min + ":" + sec;
-    
-    // return (<div style={{color:"red"}}>
-    //     <div>{date}</div>
-    //     <div>{time}</div>
-    //   </div>)
-    return Date.now()
-  }
+    const time = hr + ':' + min + ':' + sec;
+  
+    return (date + " "+ time) ;
+  };
 
     const handleFormSubmit = (e)=>{
         e.preventDefault();
@@ -41,9 +37,9 @@ export const CustomForm = () => {
           name: task,
           checked: false,
           id: Date.now(),
-          timeStamp: getToday()
+          timeStamp: getCurrentDateTime(),
         })
-        setTask(" ")
+        setTask("")
     };
 
   return (
@@ -58,7 +54,7 @@ export const CustomForm = () => {
               required
               id="task"
               className="input"
-              value={task.trim()}
+              value={task}
               onInput={(e)=>setTask(e.target.value)}
               placeholder="Add task"
               maxLength={60}

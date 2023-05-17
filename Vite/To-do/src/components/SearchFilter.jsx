@@ -21,7 +21,7 @@ function SearchFilter() {
             className='input'
             value={searchVal}
             onChange={(e)=>setSearchVal(e.target.value)}
-             />
+              />
 
         <button className='btn'>
         <MagnifyingGlassIcon strokeWidth={2} height={24} width={24}/>
