@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
-import { AdjustmentsHorizontalIcon, MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+import React, { useContext, useState } from 'react'
+import { AdjustmentsHorizontalIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 import { todoContext } from '../context/context';
 
 function SearchFilter() {
     const {searchVal, setSearchVal} = useContext(todoContext)
-
+    
   return (
     <>
     {/* css from index.css */}
@@ -23,15 +23,20 @@ function SearchFilter() {
             onChange={(e)=>setSearchVal(e.target.value)}
               />
 
-        <button className='btn'>
-        <MagnifyingGlassIcon strokeWidth={2} height={24} width={24}/>
+        <button className='btn' >
+          {searchVal ? 
+            (<XMarkIcon strokeWidth={2} height={24} width={24}/>):
+            (<MagnifyingGlassIcon strokeWidth={2} height={24} width={24}/>)}
         </button>
     </div> 
 
     {/* Filter Section */}
-    <button className='btn'>
-            <AdjustmentsHorizontalIcon strokeWidth={2} height={24} width={24}/>
-    </button>  
+    {searchVal ?  null : (
+      <button className='btn' id='filterBtn'>
+      <AdjustmentsHorizontalIcon strokeWidth={2} height={24} width={24}/>
+      </button>
+    )  }
+      
    </div>
     </>
   )
