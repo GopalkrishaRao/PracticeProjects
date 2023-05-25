@@ -18,7 +18,9 @@ function App() {
   const [previousFoucs, setPreviousFocus] = useState(false);
   
   const [searchVal, setSearchVal]=useState("");
-
+  const [sortVal, setSortVal] = useState(0);
+  const [sortType, setSortType]= useState("A=>Z")
+  
   const addTask = (task) =>{
     setTasks(prevState=>[...prevState, task])
   };
@@ -55,11 +57,29 @@ function App() {
     setPreviousFocus(document.activeElement)
   };
 
+  // sort Todo
+  const sortTodo= ()=>{
+   if(sortVal===0){
+    setSortVal(1)
+    setSortType("Time up")
+   }else if(sortVal===1){
+    setSortVal(2)
+    setSortType("Time down")
+   }else if (sortVal===2){
+    setSortVal(3)
+    setSortType("A=>Z")
+
+   }else{
+    setSortVal(0)
+    setSortType("Z=>A")
+   }
+  }
+
   return (
     <>
     <todoContext.Provider value={
       {tasks, setTasks,deleteTask,
-       toggleTask,editedTask, enterEditMode, updateTask, closeEditMode, addTask,searchVal, setSearchVal}
+       toggleTask,editedTask, enterEditMode, updateTask, closeEditMode, addTask,searchVal, setSearchVal, sortTodo, sortVal,sortType }
        }>
     <div className="container">
       <header>

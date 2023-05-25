@@ -4,8 +4,9 @@ import { AdjustmentsHorizontalIcon, MagnifyingGlassIcon, XMarkIcon } from '@hero
 import { todoContext } from '../context/context';
 
 function SearchFilter() {
-    const {searchVal, setSearchVal} = useContext(todoContext)
+    const {searchVal, setSearchVal, sortTodo, sortVal, sortType} = useContext(todoContext);
     
+   
   return (
     <>
     {/* css from index.css */}
@@ -31,8 +32,10 @@ function SearchFilter() {
     </div> 
 
     {/* Filter Section */}
+  {console.log(sortVal)}
     {searchVal ?  null : (
-      <button className='btn' id='filterBtn'>
+      <button className='btn' id='filterBtn' onClick={sortTodo}>
+      <span style={{color:"white"}}>Sort {sortType}</span> 
       <AdjustmentsHorizontalIcon strokeWidth={2} height={24} width={24}/>
       </button>
     )  }
