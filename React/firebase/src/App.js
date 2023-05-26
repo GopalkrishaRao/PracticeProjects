@@ -1,8 +1,8 @@
 import React, {useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter as Router, Switch, Route, Link, Routes} from 'react-router-dom';
-import {ToastContainer, TostContainer} from 'react-toastify';
+import {BrowserRouter as Router, Switch, Route,  Routes} from 'react-router-dom';
+import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
 import { UserContext } from './context/UserContext';
 
@@ -12,7 +12,7 @@ import 'firebase/auth';
 
 // components
 import Home from './pages/Home';
-import Siginin  from './pages/Siginin';
+import Signin from './pages/Signin';
 import SignUp from './pages/SignUp';
 import PageNotFound from './pages/PageNotFound';
 import Footer from './layouts/Footer';
@@ -34,7 +34,7 @@ const [user, setUser] = useState(null)
     <Header/>
     <Routes>
           <Route  path='/' element={<Home/>} />
-          <Route  path='/signin' element={<Siginin/>} />
+          <Route  path='/signin' element={<Signin/>} />
           <Route  path='/signup' element={<SignUp/>} />
           <Route  path='/*' element={<PageNotFound/>} />
     </Routes>

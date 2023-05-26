@@ -28,21 +28,6 @@ export default function SignUp() {
   const [email, setEmail]= useState('');
   const [password, setPassword]= useState('');
 
-  // const handleSignUp = ()=>{
-  //   firebase
-  //     .auth()
-  //     .createUserWithEmailAndPassword(email, password)
-  //     .then(res=>{
-  //       console.log(res);
-  //       context.setUser({
-  //         email: res.user.email, 
-  //         uid: res.user.uid})
-  //     })
-  //     .catch(error=>{console.log(error);
-  //     toast(error.message,
-  //       { type:'error'})
-  //   })
-  // }
 const handleSignUp = () => {
   const auth = getAuth();
   createUserWithEmailAndPassword(auth, email, password)
@@ -63,7 +48,6 @@ const handleSignUp = () => {
     e.preventDefault();
     handleSignUp()
   }
-
 
   if(context.user?.uid){
     return <Home/>
@@ -119,4 +103,4 @@ const handleSignUp = () => {
       </Row>
     </Container>
   )
-}
+};
