@@ -32,7 +32,6 @@ function SearchFilter() {
     </div> 
 
     {/* Filter Section */}
-  {console.log(sortVal)}
     {searchVal ?  null : (
       <button className='btn' id='filterBtn' onClick={sortTodo}>
       <span style={{color:"white"}}>Sort {sortType}</span> 

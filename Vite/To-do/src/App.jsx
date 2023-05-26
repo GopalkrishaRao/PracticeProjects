@@ -68,7 +68,6 @@ function App() {
    }else if (sortVal===2){
     setSortVal(3)
     setSortType("A=>Z")
-
    }else{
     setSortVal(0)
     setSortType("Z=>A")
