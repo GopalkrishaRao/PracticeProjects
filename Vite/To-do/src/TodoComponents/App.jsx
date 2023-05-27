@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import useLocalStorage from "./Hooks/useLocalStorage";
 import { todoContext } from "./context/context";
-
 import { CustomForm } from "./components/CustomForm";
 import { TaskList } from "./components/TaskList";
 import Editform from "./components/Editform";
@@ -81,9 +80,9 @@ function App() {
        toggleTask,editedTask, enterEditMode, updateTask, closeEditMode, addTask,searchVal, setSearchVal, sortTodo, sortVal,sortType }
        }>
     <div className="container">
-      <header>
+      {/* <header>
         <h1>To Do List</h1>
-      </header>
+      </header> */}
       { isEditing && (<Editform/>) }
       <CustomForm />
       <SearchFilter/>
