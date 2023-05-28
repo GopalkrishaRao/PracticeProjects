@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { account } from '../appwrite/appwriteConfig';
 import {useNavigate, Link} from 'react-router-dom';
-import Todo from '../../TodoComponents/Todo'
+import Todo from '../../TodoComponents/Todo';
 
 
 export default function Profile() {
-  
 
 const navigate = useNavigate()
 
@@ -62,4 +61,4 @@ return (
     )}
   </>
   )
-}
+};
