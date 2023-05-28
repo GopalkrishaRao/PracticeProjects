@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Header from './loginComponents/Header';
 import { LoginContext } from './loginContext/loginContext';
-import Todo from '../TodoComponents/Todo';
 
 
 export default function HomePage() {
@@ -11,7 +10,6 @@ export default function HomePage() {
     <>
     <LoginContext.Provider value={{user, setUser}}>
       <Header/>
-      <Todo/>
     </LoginContext.Provider>
     </>
   )
