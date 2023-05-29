@@ -34,9 +34,10 @@ return (
     <>
     {userDetails ? (
       <>
+        {console.log(userDetails)}
         <div className="">
           <div>
-            <p className="text-xl">Hello {userDetails.name}</p>
+            <p className="text-xl"> {userDetails.name}</p>
           </div>
           <div>
             <button
