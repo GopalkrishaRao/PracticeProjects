@@ -1,10 +1,41 @@
 
 #
-## String Methods
+## [String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+* String length
+* String slice()
+* String substring()
+* String substr()
+* String replace()
+* String replaceAll()
+* String toUpperCase()
+* String toLowerCase()
+* String concat()
+* String trim()
+* String trimStart()
+* String trimEnd()
+* String padStart()
+* String padEnd()
+* String charAt()
+* String charCodeAt()
+* String split()
+
+
+# [String Search](https://www.w3schools.com/js/js_string_search.asp)
+* String indexOf()
+* String lastIndexOf()
+* String search()
+* String match()
+* String matchAll()
+* String includes()
+* String startsWith()
+* String endsWith()
+
 
 * All string methods return a new string. They don't modify the original string.
 
 * Strings are immutable: Strings cannot be changed, only replaced.
+
+
 #
 * **String length**: 
 The length data property of a string contains the length of the string in UTF-16 code units.
