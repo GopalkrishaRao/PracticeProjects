@@ -55,7 +55,7 @@ typeof(NaN)
 * The undefined property indicates that a variable has not been assigned a value, or declared but not initialized at all. The type of undefined value is undefined too.
 #
 ## [null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/null):
-* The null value represents the intentional absence of any object value.
+* The null value represents the intentional absence of any object value. It is often used to indicate that a variable intentionally has no value.
 * You can empty the variable by setting the value to null.
 #
 ## [eval()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval):
@@ -97,6 +97,8 @@ false+5                  //5
 #
 ## [Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures):
 
+* A closure is the combination of a function and the lexical environment within which that function was declared
+
 * An inner function that has access to the outer or enclosing function’s variables.
 * A closure gives you access to an outer function's scope from an inner function
 ``` 
@@ -125,8 +127,6 @@ console.log(addFive(3)); // Output: 8
 # 
 ## [Local Scope](https://developer.mozilla.org/en-US/docs/Glossary/Local_scope):
 * Local scope refers to variables and functions that are accessible only within a particular function or block of code. 
-* When a variable or function is declared inside a function or block of code, it is placed in the local scope. 
-* Variables and functions in the local scope can be accessed only within the function or block of code where they are declared.
 
 
 ```
@@ -144,17 +144,14 @@ console.log(x); // Output: 5
 console.log(y); // Output: Uncaught ReferenceError: y is not defined
 
 ```
+
 #
 ## [Lexical Scope]():
 * Lexical scope is the definition area of an expression. It is the area upto which the variables and functions created are visible and accessible.
 
-* In JavaScript, lexical scope refers to the visibility and accessibility of variables and functions within nested functions.
-
 *  In other words, an item's lexical scope is the place in which the item got created.
 
-* The lexical scope is determined by the placement of functions and variables in the code at the time the code is written, and it cannot be changed dynamically during runtime.
 
-* When a function is defined inside another function, the inner function has access to variables defined in the outer function, as well as variables defined in the global scope. However, variables defined inside an inner function are not accessible in the outer function or global scope.
 ```
 function outerFunction() {
   const outerVar = 'I am in the outer function';
@@ -175,12 +172,34 @@ function outerFunction() {
 }
 
 outerFunction();
+```
+
+#
+## [Scope Chain]():
+* A scope chain refers to the unique spaces that exist from the scope where a variable got called to the global scope.
 
 ```
+// Define a variable in the global scope:
+const fullName = "Oluwatobi Sofela";
+
+// Define nested functions:
+function profile() {
+  function sayName() {
+    function writeName() {
+      return fullName;
+    }
+    return writeName();
+  }
+  return sayName();
+}
+
+```
+
+
 #
 ## [Callback Function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
 * A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.
-* The callbacks are needed because javascript is an event driven language. That means instead of waiting for a response javascript will keep executing while listening for other events.
+
 
 ```
 function greeting(name) {
@@ -195,6 +214,7 @@ function processUserInput(callback) {
 processUserInput(greeting);
 
 ```
+
 #
 ## [Callback Hell]():
 * Callback hell is a term used to describe a situation in asynchronous programming where a large number of nested callbacks are required to execute a series of tasks. 
@@ -280,6 +300,54 @@ function add(a, b) {
  // Output: 5
 
 ```
+
+#
+## [Pure Function](https://www.scaler.com/topics/pure-function-in-javascript/):
+* A pure function in JavaScript is a function that returns the same result if the same arguments(input) are passed in the function and does not have side effects (Does not manupulate values outside of scope).
+```
+function operationAdd(a, b){ 
+    return a+b;
+}
+
+  operationAdd(2,5),
+  
+```
+#
+## Parameter:
+* Variable name used during defining a function
+
+#
+## Argument:
+* Value given to a function when invoked
+
+#
+## [Function Statemet or Function Decleration ]():
+* A way to define a named function using the function keyword.
+```
+function functionName(parameters) {
+  // Function body
+  // Code to be executed
+  // Optional return statement
+}
+
+```
+
+#
+## [Function Expression]():
+*  A way to define a function by assigning it to a variable or a property. It allows functions to be treated as values, which can be stored in variables, passed as arguments to other functions, or returned from other functions.
+
+```
+var functionName = function(parameters) {
+  // Function body
+  // Code to be executed
+  // Optional return statement
+};
+
+```
+#
+## [Destructuring ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment):
+* Process of  unpacking values from arrays, or properties from objects, into distinct variables.
+
 #
 ## [prototype]():
 * Prototypes are the mechanism by which JavaScript objects inherit features from one another.
@@ -314,6 +382,10 @@ function add(a, b) {
 
 #
 ## [Temporal Dead Zone (TDZ)]()
+* TDZ is a term to describe the state of variables where they are not accessible. A variable declared using let & const is in TDZ from the start of the block until the initialization has completed.
+
+*  the area of a block where a variable is inaccessible until the moment the computer completely initializes it with a value.
+
 * A behavior in JavaScript that occurs when a variable is accessed before it is declared with let or const , but not with var.  During the TDZ, accessing the variable will result in a ReferenceError.
 
 * (for variable decleared with var it retturns **undefined**)
@@ -328,6 +400,22 @@ let myVar = "Hello, world!";
 
 console.log(myVar); // undefined
 var myVar = "Hello, world!";
+```
+
+```
+{
+  // bestFood’s TDZ starts here (at the beginning of this block’s local scope)
+  // bestFood’s TDZ continues here
+  // bestFood’s TDZ continues here
+  // bestFood’s TDZ continues here
+  console.log(bestFood); // returns ReferenceError because bestFood’s TDZ continues here
+  // bestFood’s TDZ continues here
+  // bestFood’s TDZ continues here
+  let bestFood = "Vegetable Fried Rice"; // bestFood’s TDZ ends here
+  // bestFood’s TDZ does not exist here
+  // bestFood’s TDZ does not exist here
+  // bestFood’s TDZ does not exist here
+}
 ```
 #
 ## [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise):
@@ -370,32 +458,15 @@ doTask1()
 * In this example, doTask1, doTask2, and doTask3 are functions that return promises. The first then block is attached to the promise returned by doTask1. When doTask1 is resolved, the callback function is executed and doTask2 is called. The same pattern repeats for the remaining tasks.
 
 * If any promise in the chain is rejected, the control jumps to the nearest catch block, allowing you to handle the error appropriately.
+
 #
 ## [Optional chaining (?.)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining):
 
 
 #
-## [Cookies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies):
-* Cookies are small pieces of data that are stored on the client-side (i.e., the user's web browser) 
-* Thye are used to store user-specific information, such as login credentials or shopping cart contents.
-* In JavaScript, cookies can be created and managed using the document.cookie property. 
-```
-document.cookie = "name=value; expires=date; path=path; domain=domain; secure";
-
-```
-#
-## [Local Storage](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage/local):
-* Local storage stores data with no expiration date
-
-#
-## [Session Storage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage):
-* Stores data for a single browsing session. When the user closes their browser, the data is deleted.
-*  This makes it ideal for storing temporary data that should not be saved between sessions, such as a user's current session state or the contents of a form that the user is filling out. 
-
-#
 ##  [Event Bubbling]():
 * A behavior in JavaScript where when an event is triggered on an element, the event propagates through the DOM tree and triggers the same event on each of its ancestor elements. 
-* This means that if you have nested elements, such as a `<div>` inside another `<div>`, and you click on the inner `<div>`, the click event will first trigger on the inner `<div>`, then on the outer `<div>`, and so on, all the way up to the `<body>` and `<html>` elements.
+
 * Event bubbling is the default behavior in JavaScript, but you can use the stopPropagation() method to prevent the event from propagating further up the DOM tree. For example:
 ```
 document.getElementById("innerDiv").addEventListener("click", function(event) {
@@ -408,9 +479,14 @@ document.getElementById("outerDiv").addEventListener("click", function() {
 });
 
 ```
-* In this example, we have two nested `<div>` elements, with the innerDiv inside the outerDiv. We attach a click event listener to both elements. When the innerDiv is clicked, its callback function is executed first, and the message "Clicked on inner div" is logged to the console. The stopPropagation() method is then called on the event object, preventing the event from propagating any further. Therefore, the click event on the outerDiv is not triggered, and the message "Clicked on outer div" is not logged to the console.
+
 
 * Event bubbling can be useful in certain situations, such as when you want to handle an event on multiple elements with a single event listener. However, it can also cause unintended consequences, such as triggering unwanted event listeners on ancestor elements. It's important to be aware of this behavior and use the stopPropagation() method when necessary to prevent unexpected results.
+
+#
+## [stopProagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation):
+* The stopPropagation method is used to stop the event from bubbling up the event chain.
+
 
 #
 ## [Event Capturing]():
@@ -427,7 +503,7 @@ document.getElementById("innerDiv").addEventListener("click", function() {
 }, true);
 
 ```
-* In this example, we have two nested `<div>` elements, with the innerDiv inside the outerDiv. We attach a click event listener to both elements, with the useCapture option set to true. When the innerDiv is clicked, the callback function for the outerDiv is executed first, and the message "Clicked on outer div (capturing)" is logged to the console. Then, the callback function for the innerDiv is executed, and the message "Clicked on inner div (capturing)" is logged to the console.
+
 
 * Event capturing is less commonly used than event bubbling, but it can be useful in certain situations, such as when you need to intercept an event before it reaches its target element. It's important to note that if you use event capturing and event bubbling on the same element, the event capturing handlers will be executed before the event bubbling handlers.
 
@@ -435,20 +511,68 @@ document.getElementById("innerDiv").addEventListener("click", function() {
 ## What is the difference between document load and DOMContentLoaded events?
 * The DOMContentLoaded event is fired when the initial HTML document has been completely loaded and parsed, without waiting for assets(stylesheets, images, and subframes) to finish loading. 
 
-* Whereas The load event is fired when the whole page has loaded, including all dependent resources(stylesheets, images).
+* Whereas The load event is fired when the whole page has loaded, including all dependent resources(stylesheets, images).p
 #
 ## What is the difference between an attribute and a property?
 * Attributes are defined on the HTML markup whereas properties are defined on the DOM.
 * An attribute is a value that is specified in the HTML markup and is used to initialize an element when the page is loaded. Attributes are defined in the opening tag of an element, and can be set to any valid value, including strings, numbers, and Boolean values. Examples of attributes include id, class, href, src, and style. Attributes are defined as strings, even if their values are numeric or boolean.
 * A property, on the other hand, is a value that is stored in the DOM object of an element and reflects the current state of that element. Properties can be accessed and modified at runtime using JavaScript, and they are often used to interact with an element dynamically. Examples of properties include innerHTML, textContent, value, and checked. Properties can have any data type, including objects, arrays, functions, and more.
-#
-## [Pure Function](https://www.scaler.com/topics/pure-function-in-javascript/):
-* A pure function in JavaScript is a function that returns the same result if the same arguments(input) are passed in the function.
-```
-function operationAdd(a, b){ 
-    return a+b;
-}
 
-  operationAdd(2,5),
-  
+#
+## [Tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking):
+* Tree shaking is a term commonly used within a JavaScript context to describe the removal of dead code.
+
+#
+## [Minification](https://developer.mozilla.org/en-US/docs/Glossary/Minification):
+* Process of minimizing code and markup in your web pages and script files by removing unnecessary or redundant data without affecting how a resource is processed by the browser.
+
+* It's one of the main methods used to reduce load times and bandwidth usage on websites.
+
+
+#
+## Shallow Copay:
+* Shallow copy is a bitwise copy of an object. A new object is created that has an exact copy of the values in the original object. If any of the fields of the object are references to other objects, just the reference addresses are copied i.e., only the memory address is copied.
+#
+## Deep Copay:
+* A deep copy copies all fields, and makes copies of dynamically allocated memory pointed to by the fields. A deep copy occurs when an object is copied along with the objects to which it refers.
+
+
+#
+## [Events](https://www.w3schools.com/js/js_events.asp):
+* In JavaScript, events are actions or occurrences that happen in the browser or on a web page, such as a button click, mouse movement, keypress, page load, or form submission. 
+* Events allow JavaScript code to respond to user interactions and trigger specific actions or functions when certain events occur.
+
+#
+## [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals):
+* Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, string interpolation with embedded expressions, and special constructs called tagged templates.
+
+
+#
+## [Interpolation]():
+* the process of inserting strings or values into an existing string for various purposes. 
 ```
+const name = 'John';
+const age = 30;
+const message = `My name is ${name} and I am ${age} years old.`;
+console.log(message);
+```
+
+#
+## [JSON](https://www.w3schools.com/js/js_json_intro.asp):
+* JSON stands for JavaScript Object Notation
+
+* JSON is a text format for storing and transporting data
+* JSON format is text only.
+```
+'{"name":"John", "age":30, "car":null}'
+```
+
+* When sending data to a web server, the data has to be a string.
+
+* Convert a JavaScript object into a string with **`JSON.stringify()`**
+* When receiving data from a web server, the data is always a string.  **`JSON.parse()`**, make data a JavaScript object.
+
+
+#
+## [Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps):
+ a type of application software delivered through the web, built using common web technologies including HTML, CSS, JavaScript, and WebAssembly. It is intended to work on any platform with a standards-compliant browser, including desktop and mobile devices.

@@ -52,6 +52,7 @@
 * Attributes usually come in name/value pairs like: `name="value"`
 * `The <a> tag defines a hyperlink. The href attribute specifies the URL of the page the link goes to:`
 * Image tag uses src attibute  `<img src="img_girl.jpg">`
+
 #
 ## Global Attributes:
 Global attributes are a set of attributes that can be used on most HTML elements. They provide common functionality and are not specific to any particular element. Here are some examples of global attributes:
@@ -73,6 +74,7 @@ Example usage of global attributes:
 ```
 In the above example, the `<div>` element has the class and id attributes, the `<p>` element has the style attribute for inline styling, and the `<a>` element has the href and title attributes.
 * Global attributes provide flexibility and standardization across different elements, allowing for consistent functionality and behavior across HTML documents.
+
 #
 ## HTML Comment Tag
 * `<!-- Write your comments here -->`
@@ -161,6 +163,7 @@ JavaScript can access elements with a specific class name with the ` getElements
 * The id name is case sensitive!
 he id name must contain at least one character, cannot start with a number, and must not contain whitespaces (spaces, tabs, etc.).
 * JavaScript can access an element with a specific id with the `getElementById()` method:
+
 #
 ##  Iframes:
 *  iframe is used to display a web page within a web page.

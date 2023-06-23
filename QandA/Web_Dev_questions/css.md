@@ -164,3 +164,9 @@ body {
 
 #
 ## [Flex box](https://trello.com/c/3hHqFZKH/52-css-selectors)
+
+#
+## [CSS Box Model](https://www.w3schools.com/css/css_boxmodel.asp):
+
+* All HTML elements can be considered as boxes.
+*  It consists of: margins, borders, padding, and the actual content.
