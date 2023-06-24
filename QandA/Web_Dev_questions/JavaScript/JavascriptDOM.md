@@ -54,3 +54,10 @@ document.cookie = "name=value; expires=date; path=path; domain=domain; secure";
 #
 ## [Polyfill](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill):
 * A polyfill is a piece of JS code used to provide modern functionality on older browsers that do not natively support it. 
+
+
+#
+## [DOM](https://www.w3schools.com/js/js_htmldom.asp):
+* Document Object Model is a platform and language-neutral interface that allows programs and scripts to dynamically access and update the content, structure, and style of a document.
+
+* 

@@ -576,3 +576,31 @@ console.log(message);
 #
 ## [Progressive Web App](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps):
  a type of application software delivered through the web, built using common web technologies including HTML, CSS, JavaScript, and WebAssembly. It is intended to work on any platform with a standards-compliant browser, including desktop and mobile devices.
+
+
+#
+## [Asynchronous ](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing):
+* Functions running in parallel with other functions are called asynchronous.
+
+ #
+ ## [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise):
+
+ * The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+* Pending, Fulfilled, Rejected are the three states of promise
+* Promise.then() takes two arguments, a callback for success and another for failure.
+
+ #
+ ## [Promise chaining]()
+
+ #
+ ## [async await](https://www.w3schools.com/js/js_async.asp):
+ * async and await make promises easier to write
+
+* The keyword async before a function makes the function return a promise
+
+* The await  makes the function pause the execution and wait for a resolved promise before it continues
+
+
+#
+## [API]():
+* It is a set of rules and protocols that allows different software applications to communicate and interact with each other. 
