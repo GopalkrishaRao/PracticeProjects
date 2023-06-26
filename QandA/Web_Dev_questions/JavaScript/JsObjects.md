@@ -24,6 +24,40 @@ delete person.age;
 * The delete operator should not be used on predefined JavaScript object properties. It can crash your application.
 
 #
+## [Call]():
+ * The call method is a function method in JavaScript that allows you to invoke a function with a specified this value and arguments provided individually.
+
+```
+function greet(name) {
+  console.log(`Hello, ${name}! Welcome to the chat.`);
+}
+
+greet.call(this, 'John');
+```
+
+#
+## [Apply]():
+* The apply method is similar to call, but it accepts arguments as an array-like object instead of individual arguments.
+```
+function greet(name) {
+  console.log(`Hello, ${name}! Welcome to the chat.`);
+}
+
+greet.apply(this, ['John']);
+```
+#
+## [Bind]():
+* The bind method creates a new function that, when called, has a fixed this value and can optionally have preset arguments.
+```
+function greet(name) {
+  console.log(`Hello, ${name}! Welcome to the chat.`);
+}
+
+var greetJohn = greet.bind(this, 'John');
+greetJohn();
+```
+
+#
 ## [Js Objects and its Methods](https://gkrao.hashnode.dev/javascript-object-and-its-methods)
 
 #

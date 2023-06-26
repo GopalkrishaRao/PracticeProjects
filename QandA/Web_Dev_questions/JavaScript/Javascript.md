@@ -604,3 +604,34 @@ console.log(message);
 #
 ## [API]():
 * It is a set of rules and protocols that allows different software applications to communicate and interact with each other. 
+
+
+#
+## [Execution context ](https://www.freecodecamp.org/news/execution-context-how-javascript-works-behind-the-scenes/#:~:text=The%20Execution%20Context%20contains%20the,and%20the%20code%20gets%20executed.):
+* Refers to the environment in which a piece of code is executed. 
+* It consists of the variables, functions, and other resources that are available during the execution of the code.
+* plays a crucial role in determining how the code behaves and what values are accessible at a given point in time
+* each time a function is invoked, a new execution context is created.
+* The execution context is responsible for managing the scope of variables and resolving references to variables and functions.
+
+# 
+## [Call stack](https://developer.mozilla.org/en-US/docs/Glossary/Call_stack):
+* used by programming languages to keep track of function calls and their execution order.
+* The call stack operates on a Last-In-First-Out (LIFO) principle
+* As functions complete their execution, their execution contexts are removed from the top of the call stack, and the control flow returns to the function that called them. 
+* This process continues until the stack is empty, indicating that the main program or the top-level script has finished executing.
+
+
+#
+## [Event loop]():
+* An event loop is something that pulls stuff out of the queue and places it onto the function execution stack whenever the function stack becomes empty.
+
+#
+## [Callback queueu]
+* Callback queueu  is where the callback function gets pushed to, and waits for the execution.
+#
+## [Microtask Queue]:
+* Microtask Queue is similar to the Callback Queue(macrotask queue), but  has a higher priority than the callback queue.
+
+*  All the callback functions coming through promises and mutation observer will go inside the microtask queue. 
+
