@@ -13,15 +13,10 @@ export default function Navbuttons() {
     };
 
     const nextQuest = ()=>{
-        if(questNo<quizQuestions.length-1){
+        if(questNo<quizQuestions.length){
             setQuestNo(()=>questNo+1) 
         }
     }
-
-// submit button
-    // if(questNo===5){
-    //     document.getElementsByClassName('next')[0].style.display='none';
-    // }
     
   return (
     <>
@@ -32,20 +27,31 @@ export default function Navbuttons() {
         >
             Prev
         </button>
-        <span>
-            Question {questNo+1} of {quizQuestions.length}
-        </span>
-        <button 
-            className='next'
-            onClick={nextQuest}
-        >
-            Next
-        </button>
-        {/* <button 
-            className='submit'
-        >
-            Submit
-        </button> */}
+        {(questNo<=quizQuestions.length-1) 
+            ? (
+            <span>
+                Question {questNo+1} of {quizQuestions.length}
+            </span>
+            ) : (  "" 
+            )
+        }
+                
+        {(questNo<quizQuestions.length)
+            ? (
+            <button 
+                className='next'
+                onClick={nextQuest}
+            >
+                Next
+            </button>
+            ) : (
+            <button 
+                className='submit'
+            >
+                Submit
+            </button>
+            )
+        }
     </div>
     </>
   )
