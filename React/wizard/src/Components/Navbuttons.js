@@ -4,7 +4,7 @@ import { quizQuestions } from './quetion';
 
 export default function Navbuttons() {
 
-    const {questNo, setQuestNo} = useContext(appContext);
+    const {questNo, setQuestNo, selAns} = useContext(appContext);
 
     const prevQuest = ()=>{
         if(questNo>=1){
@@ -14,7 +14,11 @@ export default function Navbuttons() {
 
     const nextQuest = ()=>{
         if(questNo<quizQuestions.length){
-            setQuestNo(()=>questNo+1) 
+            if(selAns[questNo]===undefined){
+                alert('Plese selct an option')
+            }else{
+                setQuestNo(()=>questNo+1) 
+            }
         }
     }
     

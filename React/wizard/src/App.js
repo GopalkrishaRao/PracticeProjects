@@ -7,19 +7,22 @@ import Navbuttons from './Components/Navbuttons';
 import Summary from './Components/Summary';
 
 function App() {
-  const [questNo, setQuestNo]= useState(0)
+  const [questNo, setQuestNo]= useState(0);
+
+  const [selAns, setSelAns] = useState([]);
+
+
   
   return (
     <>
     <appContext.Provider 
-      value={{questNo, setQuestNo}}
+      value={{questNo, setQuestNo, selAns, setSelAns}}
     >
 
       <div className='App'>
         {(questNo<quizQuestions.length) ? <Quiz/> : <Summary/>}
         <Navbuttons/>
       </div>
-
     </appContext.Provider>
     </>
 

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { quizQuestions } from './quetion';
+import { appContext } from './context/context';
 
 export default function Summary() {
+   const {selAns} = useContext(appContext);
+
    
   return (
   <>
@@ -10,7 +13,7 @@ export default function Summary() {
         return (
             <>
             <div className='questionSet'> 
-              <span>{e.id}. </span> 
+              <span>{e.questionNumber }. </span> 
               {e.question}
             </div>
                 {e.options.map(ans=>{
@@ -18,6 +21,7 @@ export default function Summary() {
                         <div className='options'>{ans}</div>
                     )
                 })}
+              <br/>
             </>
         )
     })

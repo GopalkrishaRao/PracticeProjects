@@ -19,8 +19,8 @@
     margin-top: 10px;
   }
   
-  .selected {
-    background: linear-gradient(to right, #74ebd5, #acb6e5) !important;
+  .selected-option {
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
   }
   
   ul {
