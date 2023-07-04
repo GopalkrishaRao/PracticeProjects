@@ -36,7 +36,6 @@ return (
     </div>
     <br/>
     <Navbuttons/>
-    <br/>
 
     </>
 )   

@@ -37,8 +37,8 @@ export default function Navbuttons() {
         </button>
         {(questNo<=quizQuestions.length-1) 
             ? (
-            <span>
-                Question {questNo+1} of {quizQuestions.length}
+            <span className='currentQuestion'>
+                Q {questNo+1} of {quizQuestions.length}
             </span>
             ) : (  "" 
             )
