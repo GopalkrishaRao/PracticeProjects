@@ -22,10 +22,12 @@ export default function Summary() {
             </div>
                 {e.options.map(ans=>{
                     return(
+                      <div className='opt'>
                         <div 
                           // coloring selected options
                           className={`options ${selAns[n]===ans ? 'selected-option' : ''}`}
                         >{ans}</div>
+                      </div>
                     )
                 })}
               <br/>
@@ -35,6 +37,7 @@ export default function Summary() {
     })
   }
   <Navbuttons/>
+  <br/>
   </>
   )
 }

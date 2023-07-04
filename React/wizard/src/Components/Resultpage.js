@@ -19,10 +19,10 @@ export default function Resultpage() {
 
   return (
     <>
-    <h2> 
+    <h2 className='result'> 
         Your Score is {score} out of {quizQuestions.length}
     </h2>
-    <h2>Answers</h2>
+    <h3>Answers:</h3>
     {
     quizQuestions.map((e, n)=>{
         return (
@@ -34,6 +34,7 @@ export default function Resultpage() {
             </div>
               {e.options.map(opt=>{
                 return(
+                  <div className='opt'>
                   <div 
                     className = {` options
                       ${((selAns[n]===opt && selAns[n]!==quizQuestions[n].answer) ? 'selected-option' : '')}
@@ -42,6 +43,7 @@ export default function Resultpage() {
                   >
                     {opt}
                   </div>
+                </div>
                 )
               })}
               <br/>
@@ -49,6 +51,6 @@ export default function Resultpage() {
         )
     })
   }
-    </>
+  </>
   )
 }
