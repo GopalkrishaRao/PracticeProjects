@@ -22,8 +22,17 @@
   .selected-option {
     background: linear-gradient(to right, #74ebd5, #acb6e5);
   }
+
+  .correct-ans{
+    background: rgb(44, 158, 44);
+  }
   
   ul {
     list-style-type: none;
+  }
+
+  .answerStatus{
+    text-align: left;
+    font-weight:800 ;
   }
   

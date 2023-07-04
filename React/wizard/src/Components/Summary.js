@@ -1,15 +1,19 @@
 import React, { useContext } from 'react';
 import { quizQuestions } from './quetion';
 import { appContext } from './context/context';
+import Navbuttons from './Navbuttons';
 
 export default function Summary() {
    const {selAns} = useContext(appContext);
 
-   
   return (
   <>
+  <div>
+    Summary
+  </div>
+  <br/>
   {
-    quizQuestions.map(e=>{
+    quizQuestions.map((e,n)=>{
         return (
             <>
             <div className='questionSet'> 
@@ -18,14 +22,19 @@ export default function Summary() {
             </div>
                 {e.options.map(ans=>{
                     return(
-                        <div className='options'>{ans}</div>
+                        <div 
+                          // coloring selected options
+                          className={`options ${selAns[n]===ans ? 'selected-option' : ''}`}
+                        >{ans}</div>
                     )
                 })}
               <br/>
+             
             </>
         )
     })
   }
+  <Navbuttons/>
   </>
   )
 }

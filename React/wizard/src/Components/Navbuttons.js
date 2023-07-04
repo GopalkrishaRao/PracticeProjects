@@ -4,7 +4,7 @@ import { quizQuestions } from './quetion';
 
 export default function Navbuttons() {
 
-    const {questNo, setQuestNo, selAns} = useContext(appContext);
+    const {questNo, setQuestNo, selAns, setSubmit} = useContext(appContext);
 
     const prevQuest = ()=>{
         if(questNo>=1){
@@ -20,6 +20,10 @@ export default function Navbuttons() {
                 setQuestNo(()=>questNo+1) 
             }
         }
+    };
+    
+    const submitAns = ()=>{
+        setSubmit(()=>true)
     }
     
   return (
@@ -51,6 +55,7 @@ export default function Navbuttons() {
             ) : (
             <button 
                 className='submit'
+                onClick={submitAns}
             >
                 Submit
             </button>

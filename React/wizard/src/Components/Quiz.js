@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { quizQuestions } from './quetion';
 import { appContext } from './context/context';
+import Navbuttons from './Navbuttons';
 
 export default function Quiz() {
     const {questNo, selAns, setSelAns} = useContext(appContext);
@@ -13,6 +14,7 @@ export default function Quiz() {
       });
     };
 
+ 
 return (
     <>
     <div className='questionSet'>
@@ -20,15 +22,17 @@ return (
     </div>
     
     <div>
-      {quizQuestions[questNo].options.map(e=> 
+      {quizQuestions[questNo].options.map(opt=> 
         <div 
-          onClick={()=>markAsn(e)}
+          onClick={()=>markAsn(opt)}
           // add backround color to selected option 
-          className={`options ${selAns[questNo]===e ?' selected-option' : ''}`}
+          className={`options ${selAns[questNo]===opt ?' selected-option' : ''}`}
         >
-          {e}
+          {opt}
         </div>)} 
     </div>
+    <Navbuttons/>
+
     </>
 )   
 }
