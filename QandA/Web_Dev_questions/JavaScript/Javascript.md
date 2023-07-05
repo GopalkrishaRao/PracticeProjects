@@ -194,7 +194,15 @@ function profile() {
 }
 
 ```
+#
+## [Constructor function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/Function):
+* The Function() constructor creates Function objects.
+```
+const sum = new Function('a', 'b', 'return a + b');
 
+console.log(sum(2, 6));
+// Expected output: 8
+```
 
 #
 ## [Callback Function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
@@ -635,3 +643,37 @@ console.log(message);
 
 *  All the callback functions coming through promises and mutation observer will go inside the microtask queue. 
 
+#
+## [Rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters):
+* The rest parameter syntax allows a function to accept an indefinite number of arguments as an array, providing a way to represent variadic functions in JavaScript.
+```
+function sum(...theArgs) {
+  let total = 0;
+  for (const arg of theArgs) {
+    total += arg;
+  }
+  return total;
+}
+
+console.log(sum(1, 2, 3));
+// Expected output: 6
+
+console.log(sum(1, 2, 3, 4));
+// Expected output: 10
+
+```
+#
+## [Spread](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax):
+* The spread (...) syntax allows an iterable, such as an array or string, to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected. 
+* In an object literal, the spread syntax enumerates the properties of an object and adds the key-value pairs to the object being created.
+
+```
+function sum(x, y, z) {
+  return x + y + z;
+}
+
+const numbers = [1, 2, 3];
+
+console.log(sum(...numbers));
+// Expected output: 6
+```
