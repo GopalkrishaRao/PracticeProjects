@@ -164,3 +164,7 @@ interfaces, especially for single-page applications.
 ## [Conditional Rendering]():
 * rendering different components or UI elements based on certain conditions or values.
 * Can be implimented by if-else statements,  ternary and logical (&& ||) operaters, switch case
+
+#
+## [Decorator in react]():
+* 
