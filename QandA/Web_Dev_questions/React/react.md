@@ -103,9 +103,19 @@ interfaces, especially for single-page applications.
   *  `ReactDOM.findDOMNode(component):` This method is used to get the DOM node associated with a React component instance. However, it's worth noting that this method is considered legacy and should be used sparingly, as it might be deprecated in future versions.
 
 #
-## [reconciliation]():
+## [Reconciliation]():
 * a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
 * When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is called reconciliation.
+
+
+#
+## Shadow DOM:
+* Shadow DOM is a browser technology that allows encapsulation of HTML, CSS, and JavaScript within a specific DOM subtree.
+* It is a way to create isolated and encapsulated components, ensuring that the styles and behavior of a component don't affect or get affected by the styles and behavior of other components on the same page.
+
+#
+## Difference between Shadow DOM and Virtual DOM
+* The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web components. The Virtual DOM is a concept implemented by libraries in JavaScript on top of browser APIs.
 
 #
 ## [props]():
@@ -167,4 +177,223 @@ interfaces, especially for single-page applications.
 
 #
 ## [Decorator in react]():
-* 
+* In the context of React, a decorator is a design pattern used to modify or extend the behavior of components or functions. It is not a built-in feature of React itself but is rather a concept that can be implemented using higher-order functions (HOCs) or through libraries that support decorator-like patterns.
+
+* In JavaScript, decorators are functions that are applied to classes, methods, or properties to add extra functionality. React components can be created using ES6 classes or functional components. Decorators can be used with both class components and functional components.
+
+
+
+#
+## [React Mixins]():
+
+#
+## [What is Hooks and why there re created  (useState, useEffect,useContext, useref, useMemo )]
+
+#
+## [React Router]():
+
+* React Router is a popular routing library for React applications that allows you to handle navigation and routing in a declarative way. 
+
+#
+## [Componet LifeCycle](https://www.w3schools.com/react/react_lifecycle.asp):
+* Each component in React has a lifecycle which you can monitor and manipulate during its three main phases.
+
+* The three phases are: Mounting, Updating, and Unmounting.
+#
+##  React tetsing Libraray
+#
+## React portals (for modals)
+#
+## what is Jest
+#
+## [Shallow Render]():
+* a testing technique used in React to isolate the component being tested from its child components. Instead of rendering the full component tree, shallow rendering only renders the component being tested and none of its children.
+
+* The primary purpose of shallow rendering is to test the behavior of the component in isolation without worrying about the implementation details of its child components. It allows you to focus on the unit testing of the component itself without triggering any lifecycle methods of its child components or any side effects they might have.
+
+
+#
+## [Strict Mode]:
+*  Strict Mode is a feature in ReactJS that helps developers identify and fix potential problems in their code by enabling additional checks and warnings during the development phase. When you wrap your React application or a part of it with Strict Mode, React performs various runtime checks and warnings to assist developers in writing more maintainable and bug-free code.
+
+#
+## "key" prop and what is the benefit of using it in arrays of elements:
+* A key is a special string attribute you should include when creating arrays of elements. Key prop helps React identify which items have changed, are added, or are removed.
+
+#
+## What is the use of refs?
+*  are a mechanism used to gain direct access to a DOM element or a React component instance that has been rendered in the render tree.
+*  Refs provide a way to interact with components or DOM elements directly, bypassing the usual unidirectional data flow in React.
+* The ref is used to return a reference to the element. They should be avoided in most cases, however, they can be useful when you need a direct access to the DOM element or an instance of a component.
+#
+## forward refs
+* a technique in React that allows components to pass a ref they receive to one of their children. This is particularly useful in cases where you need to access the underlying DOM element or a React component instance of a child component directly from the parent component.
+
+# 
+## [controlled components]:
+* a concept in React used for handling form elements where the value of the form element is controlled by React state rather than the DOM. 
+* In a controlled component, the React component maintains the state of the form input, and any changes to the input are handled by updating the state. This way, React has full control over the form element's value and can ensure that it is always in sync with the state.
+* A component that controls the input elements within the forms on subsequent user input is called Controlled Component, i.e, every state mutation will have an associated handler function.
+
+
+* To create a controlled component, you need to do the following:
+
+1. Set the initial state for the form element in the component's state.
+2. Use the value prop for the form element to set its value to the state value.
+3. Handle the onChange event for the form element to update the state when the user makes changes.
+Here's an example of a controlled component for an input element:
+
+```
+import React, { useState } from 'react';
+
+function MyForm() {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Do something with the form data, e.g., submit to the server
+    console.log('Form submitted:', inputValue);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleChange}
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+```
+
+* In the example above, the inputValue state variable is used to control the value of the input element. When the user types something into the input, the handleChange function updates the inputValue state accordingly. The value prop of the input is set to inputValue, which means the input will always display the value that is in the component's state.
+
+* Controlled components offer several benefits:
+
+1. Single Source of Truth: The component's state serves as the single source of truth for the form input value, making it easier to manage and track the data.
+
+2. Easy Data Validation and Transformation: Since you control the data flow, you can easily validate and transform the input data before submitting it.
+
+3. Improved Predictability: Because React controls the form input value, you can maintain a predictable and deterministic behavior for the form handling.
+
+#
+## uncontrolled components
+* The Uncontrolled Components are the ones that store their own state internally, and you query the DOM using a ref to find its current value when you need it. This is a bit more like traditional HTML.
+* Uncontrolled components are a concept in React used for handling form elements where the value of the form element is managed by the DOM rather than by React state. In an uncontrolled component, the form element maintains its own state internally, and React does not control the value of the form input.
+
+
+* To create an uncontrolled component, you simply let the form element manage its value without explicitly setting a React state or controlling its value with the value prop. Instead, you can use the defaultValue or defaultChecked props to set the initial value of the form element.
+
+```
+import React from 'react';
+
+function MyForm() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Access the form input value using the DOM API
+    const inputValue = event.target.elements.myInput.value;
+    // Do something with the form data, e.g., submit to the server
+    console.log('Form submitted:', inputValue);
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" name="myInput" defaultValue="" />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+
+```
+* In the example above, we use the defaultValue prop to set the initial value of the input element. When the user types something into the input, the DOM will handle the input's value internally, and React will not be aware of the changes. When the form is submitted, we access the input value using the DOM API (event.target.elements.myInput.value) instead of querying the React state.
+
+#
+## [Lifting State Up]():
+* When several components need to share the same changing data then it is recommended to lift the shared state up to their closest common ancestor. That means if two child components share the same data from its parent, then move the state to parent instead of maintaining local state in both of the child components.
+* "Lifting State Up" is a powerful pattern in React that involves moving the state from a child component to a parent component in the component hierarchy. The goal is to create a single source of truth for the shared state and manage it in a higher-level component, allowing multiple child components to access and modify the state through props.
+
+#
+## [fragments]():
+* It's a common pattern in React which is used for a component to return multiple elements. Fragments let you group a list of children without adding extra nodes to the DOM.
+* a way to group multiple elements together without introducing additional markup in the DOM. They allow you to return multiple elements from a component's render method without the need to wrap them in a container element like a `<div>`.
+
+#
+## [portals in React]():
+
+* Portal is a recommended way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
+
+* Portals in React are a feature that allows you to render a component's content in a different part of the DOM, outside its parent component's hierarchy. With portals, you can render a child component at a different DOM node (typically outside the root component) while maintaining the component's state and events as if it were still inside the original component's hierarchy.
+
+* Portals are useful for scenarios where you need to render content outside the normal DOM flow. This can be helpful when you want to create overlays, modals, tooltips, or any other UI elements that need to be positioned outside the root component but still be part of the React application.
+
+```
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const Modal = ({ children }) => {
+  return ReactDOM.createPortal(
+    <div className="modal">
+      {children}
+    </div>,
+    document.getElementById('modal-root')
+  );
+};
+
+const App = () => {
+  return (
+    <div>
+      <h1>Welcome to My App</h1>
+      <Modal>
+        <p>This is a modal content</p>
+      </Modal>
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+```
+
+* In this example, we have a Modal component that represents a modal dialog. The Modal component uses ReactDOM.createPortal to render its content (the children) into a DOM node with the ID 'modal-root', which is typically located outside the root component (where ReactDOM.render is called).
+
+#
+## [Render method of react-dom]():
+* This method is used to render a React element into the DOM in the supplied container and return a reference to the component. If the React element was previously rendered into container, it will perform an update on it and only mutate the DOM as necessary to reflect the latest changes.
+
+#
+## happen if you use props in initial state?
+* If the props on the component are changed without the component being refreshed, the new prop value will never be displayed because the constructor function will never update the current state of the component. The initialization of state from props only runs when the component is first created.
+
+#
+## Why we need to be careful when spreading props on DOM elements?
+* When we spread props we run into the risk of adding unknown HTML attributes, which is a bad practice. Instead we can use prop destructuring with …rest  operator, so it will add only required props.
+
+#
+## [switching component]():
+*  the concept of conditionally rendering different components based on a certain condition or state. It means displaying one component at a time while hiding others, depending on the specific criteria or user interactions.
+*   done with conditional rendering (if else, ternary operator, switch case)
+
+#
+## Mixins:
+* React mixins were a feature in earlier versions of React that allowed developers to share behavior among multiple components. A mixin is a way to reuse a set of functionalities and methods across multiple components by merging the mixin's properties into the components. This approach provided a form of code reuse and composition in React components.
+
+However, React mixins were officially deprecated as of React v16.3.0, and their usage is discouraged. The React team made this decision due to several issues that mixins introduced, such as conflicts with lifecycle methods, increased complexity, and difficulties with debugging.
+
+* Instead of mixins, the React team encourages developers to use other patterns and techniques for code reuse, such as Composition, Higher-Order Components, Render Props, React Hooks
+
+#
+## Why should component names start with capital letter?
+*  component names should start with a capital letter to distinguish them from regular HTML elements and to follow the naming conventions of React.
+
+#
+## Why you can't update props in React?
+* The React philosophy is that props should be immutable and top-down. This means that a parent can send any prop values to a child, but the child can't modify received props.

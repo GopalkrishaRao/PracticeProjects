@@ -677,3 +677,26 @@ const numbers = [1, 2, 3];
 console.log(sum(...numbers));
 // Expected output: 6
 ```
+
+#
+## [Debouncing]():
+* Debouncing is a programming technique used to control the frequency of a function call by ensuring that it only executes after a certain amount of time has passed since the last invocation.
+ * It's often used to improve performance and optimize resource usage, especially in scenarios where functions may be called rapidly and unnecessarily, leading to unnecessary processing or network requests.
+
+ * Debouncing is a programming practice used to ensure that time-consuming tasks do not fire so often, that it stalls the performance of the web page. In other words, it limits the rate at which a function gets invoke
+
+#
+## [Throttling]():
+ * Throttling is a technique used to control the rate at which a function is called to avoid excessive executions, particularly in scenarios where events can fire rapidly, such as scroll, resize, or mousemove events.
+
+* Throttling is similar to debouncing (which we discussed earlier), but with throttling, the **function is executed at a regular interval, whereas with debouncing, the function is executed only after a quiet period**.
+
+* Throttling can be beneficial in certain scenarios, especially when dealing with events that can be triggered rapidly and cause unnecessary resource usage or performance issues. 
+* By throttling the function, you can control the frequency of its execution and optimize the overall performance of your React application.
+
+#
+## [Code Splitting]():
+* a technique used in modern web development to improve the performance and reduce the initial loading time of web applications.
+*  It involves breaking down a large JavaScript bundle into smaller, more manageable chunks or "split points." Instead of loading the entire application code at once, code splitting allows you to load only the necessary code for the current page or feature.
+
+* In React, code splitting is typically achieved using dynamic imports, supported natively through ECMAScript (ES) modules or with the help of tools like Webpack or React's built-in React.lazy and Suspense API.
