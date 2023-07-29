@@ -1,5 +1,6 @@
 ## CSS : 
-* Cascading Style Sheets is the language used to style an HTML document. It escribes how HTML elements should be displayed.
+* Cascading Style Sheets is the language used to style an HTML document.
+*  It describes how HTML elements should be displayed.
 # three ways to add CSS
 *  External CSS: 
      * 

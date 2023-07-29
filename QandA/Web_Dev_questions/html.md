@@ -13,6 +13,11 @@
 |---|---|---|
 | `<h1>`  | My First Heading  |  `</h1>` |
 
+* **HTML tags** are used to define the structure and elements of a webpage. 
+* They are composed of angle brackets (< >) and typically come in pairs: an opening tag and a closing tag.
+*  The opening tag indicates the beginning of an element, and the closing tag denotes the end of that element. 
+* Tags are used to mark up and describe the content of a webpage so that web browsers can interpret and display it correctly.
+
 * Some HTML elements have no content (like the `<br>` element). These elements are called empty elements. 
 # 
 
@@ -21,8 +26,11 @@
 
 #
 ###  <!DOCTYPE> 
- * The declaration is not an HTML tag. It is an "information" to the browser about what document type to expect.
- *
+ * The declaration is not an HTML tag but is a document type declaration. 
+
+ * It is an "information" to the browser about what document type to expect.
+ * In html it is used to specify the type and version of the HTML being used in a webpage. 
+ 
  #
  ### Semantic HTML
  * A semantic element clearly describes its meaning to both the browser and the developer.
