@@ -514,7 +514,9 @@ document.getElementById("innerDiv").addEventListener("click", function() {
 
 
 * Event capturing is less commonly used than event bubbling, but it can be useful in certain situations, such as when you need to intercept an event before it reaches its target element. It's important to note that if you use event capturing and event bubbling on the same element, the event capturing handlers will be executed before the event bubbling handlers.
-
+#
+## [Event deligation](https://javascript.info/event-delegation):
+* Rather than attaching an individual event listener to each element, event delegation allows you to attach a single event listener to a higher-level ancestor element that encompasses all the target elements.
 #
 ## What is the difference between document load and DOMContentLoaded events?
 * The DOMContentLoaded event is fired when the initial HTML document has been completely loaded and parsed, without waiting for assets(stylesheets, images, and subframes) to finish loading. 
