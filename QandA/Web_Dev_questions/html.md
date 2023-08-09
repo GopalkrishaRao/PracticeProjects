@@ -264,3 +264,15 @@ document.getElementById("demo").innerHTML = "Hello JavaScript!";
 
 #
 ## [HTML Form](https://www.w3schools.com/html/html_forms.asp):
+
+
+#
+## Pseudo-class:
+* A pseudo-class is used to style an element based on its current state or interaction. It starts with a single colon (:) followed by the name of the pseudo-class. 
+* Common pseudo-classes include :hover, :active, :focus, :visited, :nth-child(), etc. These pseudo-classes target specific conditions or positions of an element and allow you to apply different styles accordingly.
+
+#
+## Pseudo-element:
+* A pseudo-element is used to style a specific part of an element. It starts with a double colon (::) followed by the name of the pseudo-element. 
+* Common pseudo-elements include ::before, ::after, ::first-line, ::first-letter, etc. 
+* Pseudo-elements allow you to insert content before or after an element, or style specific parts of the content.
