@@ -84,7 +84,7 @@ a() // 333
 <!-- method 3 -->
 function a() {
   for (var i = 0; i < 3; i++) {
-    // Create a new function with i as a parameter using an IIFE (Immediately Invoked Function Expression)
+    // Create a new function with i as a parameter using an IIFE 
     (function (num) {
       setTimeout(() => console.log(num), num * 1000);
     })(i + 1);
@@ -161,4 +161,49 @@ let pesonB = {
 let newPerson = person.hello.bind(pesonB)
 newPerson("secoend bind")
 // Rao says hello this is secoend bind
+```
+
+
+```
+function func(){
+  const a=b=c=1;
+}
+func()
+console.log(typeof a, typeof b, typeof c);
+
+<!-- Output -->
+Unfefined number number
+```
+
+```
+sayOtherName();
+sayName()
+
+var sayName =()=>{
+  console.log("hello world");
+}
+
+function sayOtherName(){
+  console.log("world is beautiful");
+}
+
+
+
+<!-- Output -->
+world is beautiful
+Type error
+```
+
+#
+```
+var x=1;
+var fun = function(){
+  console.log(x);
+  var x=2;
+}
+
+fun()
+
+<!-- undefined -->
+
 ```

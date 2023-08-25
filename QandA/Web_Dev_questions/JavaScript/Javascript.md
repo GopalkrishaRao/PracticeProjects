@@ -702,3 +702,12 @@ console.log(sum(...numbers));
 *  It involves breaking down a large JavaScript bundle into smaller, more manageable chunks or "split points." Instead of loading the entire application code at once, code splitting allows you to load only the necessary code for the current page or feature.
 
 * In React, code splitting is typically achieved using dynamic imports, supported natively through ECMAScript (ES) modules or with the help of tools like Webpack or React's built-in React.lazy and Suspense API.
+
+#
+* [Currying](https://www.geeksforgeeks.org/what-is-currying-function-in-javascript/):
+* It is a technique in functional programming, that transforms the function of multiple arguments into several functions of a single argument in sequence. 
+
+```
+function simpleFunction(param1, param2, param3, .....) => function 
+curriedFunction(param1)(param2)(param3)(....
+```
