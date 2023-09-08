@@ -1,0 +1,16 @@
+{
+  "name": "section04imporveddevworkanddebugging",
+  "version": "1.0.0",
+  "description": "Node",
+  "main": "04app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon 04app.js",
+    "start-server": "node 04app.js"
+  },
+  "author": "GK Rao",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
