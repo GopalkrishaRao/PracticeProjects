@@ -1,5 +1,5 @@
 
-function add(n, n2){
+function add(n:number | string, n2){
     return n+n2;
 };
 
