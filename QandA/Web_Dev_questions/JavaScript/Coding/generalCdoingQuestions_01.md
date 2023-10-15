@@ -91,3 +91,96 @@ function facctorial(a){
 }
 console.log(facctorial(4)); // 24
 ```
+
+#
+* Remove duplicate from array
+
+* Method: 1
+```
+function removeDuplicate(a){
+   let uniqueArray=[];
+   for(let i=0; i<a.length; i++){
+    if(uniqueArray.includes(a[i])===false){
+        uniqueArray.push(a[i])
+    }
+   }
+   return uniqueArray
+}
+
+console.log(removeDuplicate([1,2,2,3,1,4]));
+
+```
+
+* Method: 2
+```
+function removeDuplicate(a){
+   return [...new Set(a)]
+}
+
+```
+
+#
+* Check anogrom
+
+```
+function checkAnogram(a,b){
+    return a.split("").sort().join("")===b.split("").sort().join("")
+};
+
+console.log(checkAnogram("as", "sa"));
+
+```
+
+#
+* Number of voles in the string
+```
+function noOfVowels(a) {
+    let n = 0;
+    for (let letter of a.toLowerCase()) {
+        if (letter === "a" || letter === "e" || letter === "i" || letter === "o" || letter === "u") {
+            n += 1;
+        }
+    }
+    return n;
+}
+
+console.log(noOfVowels("Hi"));
+
+```
+
+#
+* Find the largest number in a array
+```
+function largestNumber(a){
+    let max=a[0];
+    for(nums of a){
+        if(nums>max){
+            max=nums
+        }
+    }
+    return max
+}
+console.log(largestNumber([1,5,6]));
+```
+
+#
+* Remove space from the string
+```
+function removeSpace(a){
+    let newString=""
+    for(letters of a){
+        if (letters!==" "){
+            newString+=letters
+        }
+    }
+    return newString
+}
+
+console.log(removeSpace("remvoe space from the senctance"));
+```
+* Method 2
+```
+function removeSpace(a){
+    return a.split("").filter((let)=>let!==" ").join("")
+}
+```
