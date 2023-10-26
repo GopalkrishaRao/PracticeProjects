@@ -44,7 +44,7 @@ class ProjectState extends State<Project> {
   private constructor() {
     super();
   }
-
+  
   static getInstance() {
     if (this.instance) {
       return this.instance;
