@@ -322,17 +322,15 @@ function MyForm() {
 
 #
 ## [fragments]():
-* It's a common pattern in React which is used for a component to return multiple elements. Fragments let you group a list of children without adding extra nodes to the DOM.
-* a way to group multiple elements together without introducing additional markup in the DOM. They allow you to return multiple elements from a component's render method without the need to wrap them in a container element like a `<div>`.
+* React Fragment is a feature in React that allows you to return multiple elements from a React component by allowing you to group a list of children without adding extra nodes to the DOM.
 
 #
 ## [portals in React]():
 
 * Portal is a recommended way to render children into a DOM node that exists outside the DOM hierarchy of the parent component.
 
-* Portals in React are a feature that allows you to render a component's content in a different part of the DOM, outside its parent component's hierarchy. With portals, you can render a child component at a different DOM node (typically outside the root component) while maintaining the component's state and events as if it were still inside the original component's hierarchy.
+*  With portals, you can render a child component at a different DOM node (typically outside the root component) while maintaining the component's state and events as if it were still inside the original component's hierarchy.
 
-* Portals are useful for scenarios where you need to render content outside the normal DOM flow. This can be helpful when you want to create overlays, modals, tooltips, or any other UI elements that need to be positioned outside the root component but still be part of the React application.
 
 ```
 
