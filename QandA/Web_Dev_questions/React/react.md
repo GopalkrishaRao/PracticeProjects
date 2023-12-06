@@ -15,6 +15,14 @@ interfaces, especially for single-page applications.
 * JSX allows you to write HTML-like code directly in your JavaScript files
 * Basically it just provides syntactic sugar for the React.createElement() function
 *  It is an extension syntax used by libraries like React for building user interfaces
+#
+## Advantages the JSX
+* Improve code readability and writability
+* It proveds type safty
+* Support JavaScript expressions
+* Imporve perfomence
+* Code reusabality
+
 
 #
 ## [Element]():
@@ -44,7 +52,14 @@ interfaces, especially for single-page applications.
 
 ```
 #
+## What is transpiler?
+* A tool that converst source code from one programming language to another.
+* Ex: Babel
+
+#
 ## [Babel](https://dev.to/getd/wtf-are-babel-and-webpack-explained-in-2-mins-43be):
+* Babel in React is used to transpile JSX syntax into regular JavaScript which browser can understand.
+
 * Babel is simply a translator, who translates your 'fancy' (ES6+) JS code into 'not-so-fancy' (ES5) ones that browser (front-end) or Node.js (back-end) understands.
 
 #
