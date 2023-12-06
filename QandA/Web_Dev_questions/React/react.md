@@ -246,6 +246,7 @@ interfaces, especially for single-page applications.
 
 # 
 ## [controlled components]:
+*  A controlled component is a component whose behavior is controlled by the application's state. The state of the component is not internal; instead, it is controlled by the application through the use of props. This allows the parent component to manage and manipulate the state of the child component.
 * a concept in React used for handling form elements where the value of the form element is controlled by React state rather than the DOM. 
 * In a controlled component, the React component maintains the state of the form input, and any changes to the input are handled by updating the state. This way, React has full control over the form element's value and can ensure that it is always in sync with the state.
 * A component that controls the input elements within the forms on subsequent user input is called Controlled Component, i.e, every state mutation will have an associated handler function.
