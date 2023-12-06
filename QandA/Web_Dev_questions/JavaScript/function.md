@@ -100,6 +100,7 @@ function add(a, b) {
 ## [IIFE(Immediately Invoked Function Expression)](https://developer.mozilla.org/en-US/docs/Glossary/IIFE):
 * A JavaScript function that runs as soon as it is defined.
 * The primary reason for using an IIFE is to create a new scope for variables, which helps to avoid naming conflicts and pollution of the global namespace.
+
 ```
 (function() {
   // Code here
