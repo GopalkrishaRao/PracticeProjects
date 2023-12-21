@@ -4,8 +4,10 @@ export default function HookNavbar() {
   return (
     <>
     <nav>
-        <button>Use State Hook</button>
-        <button>Use Effect Hook</button>
+        <button>Use State</button>
+        <button>Use Effect</button>
+        <button>Use Reducer</button>
+        <button>Use Ref</button>
     </nav>
     </>
   )
