@@ -1,7 +1,7 @@
 #
 ## [React](https://react.dev/):
 * React is an open-source front-end JavaScript library that is used for building user
-interfaces, especially for single-page applications. 
+interfaces, especially for single-page applications using virtual DOM. 
 
 * **Major features of React**:
     * Use of VirtualDOM
@@ -51,6 +51,12 @@ interfaces, especially for single-page applications.
 }
 
 ```
+
+#
+## What is pure Component?
+* `React.PureComponent`  is exactly the same as `React.Component` but it automatically implements the `shouldComponentUpdate()` lifecycle method with a shallow prop and state comparison.
+* This comparison helps optimize rendering performance by preventing unnecessary re-renders when the props and state of a component haven't changed. 
+
 #
 ## What is transpiler?
 * A tool that converst source code from one programming language to another.
@@ -200,6 +206,11 @@ interfaces, especially for single-page applications.
 
 #
 ## [React Mixins]():
+* Mixins are a way to encapsulate and share code between different components. 
+* In the context of React, mixins were JavaScript objects containing methods that could be added to a component's prototype. Components could use multiple mixins, allowing developers to compose behavior from different sources.
+* Mixins are a way to totally separate components to have a common functionality.
+* Alternative to mixins are HOC, Render Props, Hooks
+
 
 #
 ## [What is Hooks and why there re created  (useState, useEffect,useContext, useref, useMemo )]
@@ -240,6 +251,10 @@ interfaces, especially for single-page applications.
 *  are a mechanism used to gain direct access to a DOM element or a React component instance that has been rendered in the render tree.
 *  Refs provide a way to interact with components or DOM elements directly, bypassing the usual unidirectional data flow in React.
 * The ref is used to return a reference to the element. They should be avoided in most cases, however, they can be useful when you need a direct access to the DOM element or an instance of a component.
+* Common uses of ref are  
+  * Accessing DOM elements
+  * Managing Focus
+  * Accessing Component Instances
 #
 ## forward refs
 * a technique in React that allows components to pass a ref they receive to one of their children. This is particularly useful in cases where you need to access the underlying DOM element or a React component instance of a child component directly from the parent component.
@@ -483,3 +498,15 @@ However, React mixins were officially deprecated as of React v16.3.0, and their 
   - Set up continuous monitoring to identify performance regressions over time.
 
 Remember, optimization is an ongoing process, and it's essential to monitor and adapt strategies based on the evolving needs of your React application.
+
+
+#
+## What are synthetic events in React?
+* SyntheticEvent  is a cross-browser wrapper around the browser's native event. Its API
+is same as the browser's native event, including stopPropagation()  and
+preventDefault() , except the events work identically across all browsers.
+
+#
+##  Why we need to pass a function to setState()?
+* tState()  is an asynchronous operation, 
+* To avoid user getting the old state value on access due to the asynchronous nature of setState() we pass a function into setState().

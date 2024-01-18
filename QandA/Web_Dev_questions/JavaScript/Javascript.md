@@ -562,3 +562,6 @@ console.log(sum(...numbers));
 function simpleFunction(param1, param2, param3, .....) => function 
 curriedFunction(param1)(param2)(param3)(....
 ```
+
+#
+## Features of ES6
