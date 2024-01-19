@@ -7,7 +7,9 @@ const reducerFn = (state={counter:0}, action)=>{
         case "DEC":
             return {counter:state.counter-1}
         case "RES":
-            return {counter:0}
+            return {counter:0};
+        case "ADD10":
+            return {counter:state.counter+action.payload}
     default:
         return state
         
