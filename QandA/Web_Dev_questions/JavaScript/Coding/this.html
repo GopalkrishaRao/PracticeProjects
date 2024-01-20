@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    <h1>Open console</h1>
+    <h2>This key word</h2>
+
+
+<script>
+    // this direcly points towords window object
+console.log(this);
+
+// normal
+function normalFunction(){
+    return this
+}
+ 
+const arrowFunction = ()=>{
+    return this
+}
+
+const me={
+    name:"gk",
+    address:{
+        normalFunction,
+        arrowFunction,
+        street:{
+            streetName:"xyz road",
+            normalFunction,
+            arrowFunction,
+        }
+    },
+    normalFunction,
+    arrowFunction 
+}
+
+// Normal function always function towords whatever is on its left side
+console.log(me.address.normalFunction());
+// Arrow function always points towords window object
+console.log(me.address.arrowFunction());
+console.log(me.normalFunction());
+console.log(me.arrowFunction());
+
+
+console.log(me.address.street.normalFunction());
+console.log(me.address.street.arrowFunction());
+
+    </script>
+</body>
+</html>

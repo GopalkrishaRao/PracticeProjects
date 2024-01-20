@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>__proto__</title>
+</head>
+<body>
+    <h1>__proto__</h1>
+    <h1>prototype</h1>
+    <h2>Open console</h2>
+    <p>me.__proto__==Object.prototype</p>
+<script>
+    const me={
+        first:"gk",
+        last: "rao"
+    }
+    const you = {
+        first: "ck"
+    }
+
+    // Do not do this
+    you.__proto__=me;
+
+    function fullName(){
+        return this.first + " "+ this.last
+    }
+
+
+    Object.prototype.fullName=fullName;
+    Object.prototype.total=function(){
+        return this.last + this.first
+    }
+    
+    // Function.prototype.sum=function (){console.log(2+2) }
+    // fullName.sum()
+    // return 4
+
+</script>
+</body>
+</html>
