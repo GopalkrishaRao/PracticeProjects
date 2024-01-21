@@ -199,15 +199,16 @@ function profile() {
 #
 ## [Destructuring ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment):
 * Process of  unpacking values from arrays, or properties from objects, into distinct variables.
+* [example](https://github.com/GopalkrishaRao/PracticeProjects/blob/main/QandA/Web_Dev_questions/JavaScript/Coding/destructuring_rest_spread.md)
 
 #
-## [prototype]():
+## [prototype](https://www.youtube.com/watch?v=wstwjQ1yqWQ&t=1077s):
 * Prototypes are the mechanism by which JavaScript objects inherit features from one another.
-
+* [example](https://github.com/GopalkrishaRao/PracticeProjects/blob/main/QandA/Web_Dev_questions/JavaScript/Coding/protoPrototype.html)
 #
-## [ __ proto __ ]():
+## [ __ proto __ ](https://www.youtube.com/watch?v=wstwjQ1yqWQ&t=1077s):
 * (pronounced "dunder proto") is a property of every object in JavaScript that refers to the object's prototype. In other words, it is a reference to the object's parent prototype object. The prototype object is an object that provides shared properties and methods for other objects to inherit.
-
+* [example](https://github.com/GopalkrishaRao/PracticeProjects/blob/main/QandA/Web_Dev_questions/JavaScript/Coding/protoPrototype.html)
 
 
 # 
@@ -500,19 +501,17 @@ console.log(message);
 ## [Rest](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters):
 * The rest parameter syntax allows a function to accept an indefinite number of arguments as an array, providing a way to represent variadic functions in JavaScript.
 ```
-function sum(...theArgs) {
-  let total = 0;
-  for (const arg of theArgs) {
-    total += arg;
-  }
-  return total;
+const arr=[1,2,4,5]
+function rest(a,b,...arr){
+    let product = a*b
+    let sum=0;
+    for(arg of arr){
+        sum += arg
+    }
+    console.log([product,sum]);
 }
-
-console.log(sum(1, 2, 3));
-// Expected output: 6
-
-console.log(sum(1, 2, 3, 4));
-// Expected output: 10
+rest(...arr) 
+// Output [2,9]
 
 ```
 #
@@ -521,14 +520,16 @@ console.log(sum(1, 2, 3, 4));
 * In an object literal, the spread syntax enumerates the properties of an object and adds the key-value pairs to the object being created.
 
 ```
-function sum(x, y, z) {
-  return x + y + z;
+const arr=[1,2,4,5]
+function rest(...arr){
+    let sum=0;
+    for(arg of arr){
+        sum += arg
+    }
+    console.log(sum);
 }
-
-const numbers = [1, 2, 3];
-
-console.log(sum(...numbers));
-// Expected output: 6
+rest(...arr)
+//12
 ```
 
 #
@@ -555,13 +556,17 @@ console.log(sum(...numbers));
 * In React, code splitting is typically achieved using dynamic imports, supported natively through ECMAScript (ES) modules or with the help of tools like Webpack or React's built-in React.lazy and Suspense API.
 
 #
-* [Currying](https://www.geeksforgeeks.org/what-is-currying-function-in-javascript/):
+## [Currying](https://www.geeksforgeeks.org/what-is-currying-function-in-javascript/):
 * It is a technique in functional programming, that transforms the function of multiple arguments into several functions of a single argument in sequence. 
 
 ```
 function simpleFunction(param1, param2, param3, .....) => function 
 curriedFunction(param1)(param2)(param3)(....
 ```
+
+#
+## [this](https://www.youtube.com/watch?v=fVXp7ZWjlO4&t=163s):
+* [example](https://github.com/GopalkrishaRao/PracticeProjects/blob/main/QandA/Web_Dev_questions/JavaScript/Coding/this.html)
 
 #
 ## Features of ES6
