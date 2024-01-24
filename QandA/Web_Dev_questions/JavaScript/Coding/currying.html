@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>currying</title>
+</head>
+<body>
+    <h1>Currying function</h1>
+    <h2 id="update">You can update the header</h2>
+    <script>
+
+
+
+// Practical example
+        function updateText(id){
+            return function (content){
+                return (
+                    document.getElementById(id).textContent = content
+                )
+            }
+        }
+
+        const updateHeader = updateText("update")
+        updateHeader("currying example")
+
+
+        
+    </script>
+</body>
+</html>

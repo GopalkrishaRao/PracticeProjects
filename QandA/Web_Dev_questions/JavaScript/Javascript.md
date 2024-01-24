@@ -556,13 +556,35 @@ rest(...arr)
 * In React, code splitting is typically achieved using dynamic imports, supported natively through ECMAScript (ES) modules or with the help of tools like Webpack or React's built-in React.lazy and Suspense API.
 
 #
-## [Currying](https://www.geeksforgeeks.org/what-is-currying-function-in-javascript/):
+## [Currying](https://roadsidecoder.hashnode.dev/javascript-interview-questions-currying-output-based-questions-partial-application-and-more):
 * It is a technique in functional programming, that transforms the function of multiple arguments into several functions of a single argument in sequence. 
 
 ```
-function simpleFunction(param1, param2, param3, .....) => function 
-curriedFunction(param1)(param2)(param3)(....
+
+function area(l){
+            return function(b){
+                return function (h){
+                    return l*b*h
+                }
+            }
+        }
+    
+    console.log(area(1)(2)(3));
+    
+    //Output:6
 ```
+```
+ //If there are multiple argumets
+         function add (a){
+    return function (b){
+         if (b) return add(a+b)
+         return a
+     }
+ }
+ console.log(add(1)(2)(3)()); 
+```
+
+* [Practical example](): In changing text content
 
 #
 ## [this](https://www.youtube.com/watch?v=fVXp7ZWjlO4&t=163s):
