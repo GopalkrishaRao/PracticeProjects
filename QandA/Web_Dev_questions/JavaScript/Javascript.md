@@ -584,7 +584,7 @@ function area(l){
  console.log(add(1)(2)(3)()); 
 ```
 
-* [Practical example](): In changing text content
+* [Practical example](https://github.com/GopalkrishaRao/PracticeProjects/blob/main/QandA/Web_Dev_questions/JavaScript/Coding/currying.html): In changing text content
 
 #
 ## [this](https://www.youtube.com/watch?v=fVXp7ZWjlO4&t=163s):
