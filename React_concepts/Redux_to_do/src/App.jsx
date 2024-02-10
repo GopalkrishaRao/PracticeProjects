@@ -1,26 +1,11 @@
-import './App.css';
-import { Container } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Todo from './components/Todo';
-import TodoForm from './components/TodoForm';
-
-import { Provider } from 'react-redux';
-import store  from './store';
-
+import Counter from "./components/counter/Counter"
 
 function App() {
 
   return (
     <>
-    <Provider store={store}>
-      <Container fluid>
-        <Todo/>
-          <TodoForm/>
-      </Container>
-    </Provider>
-      <div className="app">
-        
-      </div>
+        <h1> Redux App</h1>
+        <Counter/>
     </>
   )
 }
