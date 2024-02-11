@@ -1,0 +1,18 @@
+.modelContainer{
+    display: none;
+    position: absolute;
+    top: 0;
+    background-color: #1f1;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.model{
+    width: 500px;
+    height: 400px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 5px #808080;
+    border-radius: 10px;
+}
