@@ -368,6 +368,8 @@ document.getElementById("innerDiv").addEventListener("click", function() {
 #
 ## [Event deligation](https://javascript.info/event-delegation):
 * Rather than attaching an individual event listener to each element, event delegation allows you to attach a single event listener to a higher-level ancestor element that encompasses all the target elements.
+* [example for event bubbling, capturing, deligation](https://www.youtube.com/watch?v=rS_4YfbEo2U)
+
 #
 ## What is the difference between document load and DOMContentLoaded events?
 * The DOMContentLoaded event is fired when the initial HTML document has been completely loaded and parsed, without waiting for assets(stylesheets, images, and subframes) to finish loading. 
