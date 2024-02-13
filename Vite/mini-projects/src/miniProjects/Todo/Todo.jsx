@@ -36,7 +36,7 @@ export default function Todo() {
                     <span className='todoText'> 
                     {t.todo}
                     </span>
-                    <button className='delete' onClick={removeHanbler}>Delete </button>
+                    <button className='delete' onClick={()=>removeHanbler(t.id)}>Delete </button>
                 </li>
                 ))
             }
