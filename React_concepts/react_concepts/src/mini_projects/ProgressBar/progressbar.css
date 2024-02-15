@@ -1,0 +1,29 @@
+.progressBar{
+    border: 2px solid #000;
+    width: 80vw;
+    border-radius: 15px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* justify-content: center; */
+}
+
+.outer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.progressColor{
+    color: black;
+    height: 100%;
+    background: rgb(89, 226, 89);
+    border-radius: 15px;
+    text-align: center;
+}
+.progressPercent{
+    position: relative;
+    top: -24px;   
+}
+
