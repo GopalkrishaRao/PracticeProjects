@@ -1,5 +1,6 @@
 import React from 'react';
-import  Progressbar  from './ProgressBar/Progressbar';
+import GridLight from './GridLights/GridLight';
+// import  Progressbar  from './ProgressBar/Progressbar';
 // import MainCounter from './ReduxCounter/MainCounter';
 // import ReactForm from './FormHandling/ReactForm';
 // import RandomJoke from './Random Joke/RandomJoke';
@@ -7,7 +8,8 @@ import  Progressbar  from './ProgressBar/Progressbar';
 export default function Projects() {
   return (
     <>
-      <Progressbar/>
+      <GridLight/>
+      {/* <Progressbar/> */}
       {/* <MainCounter/> */}
       {/* <RandomJoke/> */}
       {/* <ReactForm/> */}
