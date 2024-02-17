@@ -1,5 +1,6 @@
 import React from 'react';
-import GridLight from './GridLights/GridLight';
+// import OtpLogin from './OTPLogin/OtpLogin';
+// import GridLight from './GridLights/GridLight';
 // import  Progressbar  from './ProgressBar/Progressbar';
 // import MainCounter from './ReduxCounter/MainCounter';
 // import ReactForm from './FormHandling/ReactForm';
@@ -8,7 +9,9 @@ import GridLight from './GridLights/GridLight';
 export default function Projects() {
   return (
     <>
-      <GridLight/>
+    
+      {/* <OtpLogin/> */}
+      {/* <GridLight/> */}
       {/* <Progressbar/> */}
       {/* <MainCounter/> */}
       {/* <RandomJoke/> */}
