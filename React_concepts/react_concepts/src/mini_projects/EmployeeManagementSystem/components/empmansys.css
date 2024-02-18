@@ -1,0 +1,121 @@
+h1{
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.add{
+    background: #c5c9c9;
+    border-radius: 16px;
+    width: 160px;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 2% auto; 
+    display: block;
+    cursor: pointer;
+}
+
+.system{
+  display: flex;
+  text-align: center;
+  width: 90vw;
+  height: 60vh; 
+  margin-inline:5%;
+  border: 2px solid #000;
+}
+
+.listTitle, .detailsTilte{
+  font-size: 24px;
+  font-weight: 600;
+  background: #c5c9c9;
+  padding:10px 0 10px 0 ;
+}
+
+.list, .listTitle {
+  flex: 30%; 
+  border-right: 2px solid #000;
+}
+.list, .details{
+  overflow: auto;
+}
+
+.details, .detailsTilte {
+  flex: 70%; 
+}
+
+.tilte{
+  display: flex;
+  text-align: center;
+  width: 90vw;
+  margin-inline:5%;
+  margin-top: 40px;
+  border: 2px solid #000;
+  border-bottom: none;
+}
+
+.name{
+  text-align: center;
+  font-size: 16px;
+}
+
+.listName{
+cursor: pointer;
+width: 100%;
+padding: 0;
+}
+
+.name{
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 20px;
+}
+
+.listName:hover{
+  background: #c5c9c9;
+}
+
+.empImg{
+  max-height: 120px;
+  max-width: 120px;
+  border-radius: 50%;
+  border: 2px solid #000;
+}
+
+.details{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.empDetails{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: auto;
+}
+
+.empDetails>*{
+  margin: 0;
+}
+
+.listdiv{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.deletBtn{
+  margin-left: auto;
+  margin-right: 20px;
+  cursor: pointer;
+  color: #ff0000;
+  font-weight: 900;
+}
+
+
+
+
