@@ -1,5 +1,6 @@
 import React from 'react';
-import EmpManSys from './EmployeeManagementSystem/EmpManSys';
+import FormValidation from './FormValidation/FormValidation';
+// import EmpManSys from './EmployeeManagementSystem/EmpManSys';
 // import OtpLogin from './OTPLogin/OtpLogin';
 // import GridLight from './GridLights/GridLight';
 // import  Progressbar  from './ProgressBar/Progressbar';
@@ -10,7 +11,8 @@ import EmpManSys from './EmployeeManagementSystem/EmpManSys';
 export default function Projects() {
   return (
     <>
-      <EmpManSys/>
+    <FormValidation/>
+      {/* <EmpManSys/> */}
       {/* <OtpLogin/> */}
       {/* <GridLight/> */}
       {/* <Progressbar/> */}
