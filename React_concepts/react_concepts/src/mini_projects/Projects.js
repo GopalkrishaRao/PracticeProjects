@@ -1,5 +1,6 @@
 import React from 'react';
-import FormValidation from './FormValidation/FormValidation';
+import JobBoard from './JobBoard/JobBoard';
+// import FormValidation from './FormValidation/FormValidation';
 // import EmpManSys from './EmployeeManagementSystem/EmpManSys';
 // import OtpLogin from './OTPLogin/OtpLogin';
 // import GridLight from './GridLights/GridLight';
@@ -11,7 +12,8 @@ import FormValidation from './FormValidation/FormValidation';
 export default function Projects() {
   return (
     <>
-    <FormValidation/>
+      <JobBoard/>
+      {/* <FormValidation/> */}
       {/* <EmpManSys/> */}
       {/* <OtpLogin/> */}
       {/* <GridLight/> */}
