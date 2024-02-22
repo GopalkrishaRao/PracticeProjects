@@ -1,6 +1,6 @@
 import React from 'react';
+import FileExplorer from './FileExplorer/FileExplores';
 // import JobBoard from './JobBoard/JobBoard';
-import { FileExplores } from './FileExplorer/FileExplores';
 // import FormValidation from './FormValidation/FormValidation';
 // import EmpManSys from './EmployeeManagementSystem/EmpManSys';
 // import OtpLogin from './OTPLogin/OtpLogin';
@@ -13,7 +13,7 @@ import { FileExplores } from './FileExplorer/FileExplores';
 export default function Projects() {
   return (
     <>
-      <FileExplores/>
+      <FileExplorer/>
       {/* <JobBoard/> */}
       {/* <FormValidation/> */}
       {/* <EmpManSys/> */}

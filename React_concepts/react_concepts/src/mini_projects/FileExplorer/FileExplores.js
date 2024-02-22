@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
-import explorer from './components/data/folderData'
-import Folder from './components/Folder';
-export const FileExplores = () => {
-    const [explorerData, setExplorerData]=useState(explorer);
+import React from 'react'
+import SimpleFileExplorer from './SimpleFileExplorer/SimpleFileExplorer';
+import FileExplorerWithFeatures from './FileExplorerWithFeatures/FileExplorerWithFeatures';
+
+const FileExplorer = () => {
+    
   return (
-<>
-<div className='fileExplorer'>
-    <Folder explorer={explorerData}/>
-
-</div>
-
+<>  
+    <h2>Simple File Explorer</h2>
+    <SimpleFileExplorer/>
+    <hr/>
+    <h2>File Explorer with Features</h2>
+    <FileExplorerWithFeatures/>
 </>
     )
-}
+};
+
+export default FileExplorer;
