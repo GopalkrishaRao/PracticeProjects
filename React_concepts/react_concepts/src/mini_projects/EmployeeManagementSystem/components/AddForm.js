@@ -1,8 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import { EmployeeContext } from '../context/employeeContext';
 import './addform.css';
 
-export const AddForm = (props) => {
-const {setTougleForm, setEmpData, empData}=props;
+export const AddForm = () => {
+const{setTougleForm, empData, setEmpData } =useContext(EmployeeContext)
+// const {setTougleForm, setEmpData, empData}=props;
 
     const formInitalState = {
         id: "",

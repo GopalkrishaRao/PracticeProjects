@@ -3,6 +3,7 @@ import './components/empmansys.css';
 import data from './components/data.json';
 import EmployeeDetails from './components/EmployeeDetails';
 import { AddForm } from './components/AddForm';
+import { EmployeeContext } from './context/employeeContext';
 
 
 export default function EmpManSys() {
@@ -36,7 +37,10 @@ const handleDelete = (id) => {
       (
         <div className='popup'>
       <div className='form'>
-        <AddForm setTougleForm={setTougleForm} empData={empData} setEmpData={setEmpData}/>
+        <EmployeeContext.Provider value={{setTougleForm, empData, setEmpData }}>
+          <AddForm/>
+          {/* <AddForm setTougleForm={setTougleForm} empData={empData} setEmpData={setEmpData}/> */}
+        </EmployeeContext.Provider>
       </div>
       </div>
       )
