@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactHooks from './ReactHooks/ReactHooks';
+import Throttle from './ThrottleScroll/Throttle';
+// import ReactHooks from './ReactHooks/ReactHooks';
 // import FileExplorer from './FileExplorer/FileExplores';
 // import JobBoard from './JobBoard/JobBoard';
 // import FormValidation from './FormValidation/FormValidation';
@@ -16,7 +17,8 @@ import ReactHooks from './ReactHooks/ReactHooks';
 export default function Projects() {
   return (
     <>
-      <ReactHooks/>
+      <Throttle/>
+      {/* <ReactHooks/> */}
       {/* <FileExplorer/> */}
       {/* <JobBoard/> */}
       {/* <FormValidation/> */}
