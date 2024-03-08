@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" href="./index.css">
+    <title>Electron renderer!</title>
+  </head>
+  <body>
+    <h1>Hello from Electron renderer!</h1>
+    <p id="info"></p>
+    <!-- collect data -->
+    <div>
+    <h2>Insert Data</h2>
+    <form id="dataInputForm">
+      Name:<input placeholder="Enter Name" id="inpName" type="text" required/>
+    </br>
+      Data:<input placeholder="Enter Data" id="inpData" type="text" required/>
+    </br>
+      <button id="addBtn" type="button">Add Data</button>
+    </form>
+    </div>
+    </br>
+    </br>
+    <!-- display data -->
+    <div>
+      <button id="displayBtn" type="button">Display Data</button>
+    </div>
+  </body>
+  <script type="text/javascript" src="render.js"></script>
+</html>
