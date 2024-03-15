@@ -1,5 +1,6 @@
 import React from 'react';
-import Throttle from './ThrottleScroll/Throttle';
+import Pagination from './Pagination/Pagination';
+// import Throttle from './ThrottleScroll/Throttle';
 // import ReactHooks from './ReactHooks/ReactHooks';
 // import FileExplorer from './FileExplorer/FileExplores';
 // import JobBoard from './JobBoard/JobBoard';
@@ -17,7 +18,8 @@ import Throttle from './ThrottleScroll/Throttle';
 export default function Projects() {
   return (
     <>
-      <Throttle/>
+    <Pagination/>
+      {/* <Throttle/> */}
       {/* <ReactHooks/> */}
       {/* <FileExplorer/> */}
       {/* <JobBoard/> */}
