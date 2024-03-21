@@ -6,7 +6,7 @@ export default function Pagination() {
     const [products, setProduct]= useState([]);
     const [currentPage,setCurrentPage]=useState(1);
 
-    let productsPerPage=5;
+    let productsPerPage=6;
 
     let toatalNumberofPages = Math.ceil(products.length/productsPerPage);
 
@@ -34,18 +34,21 @@ export default function Pagination() {
     <>
     <h2>Pagination</h2>
     { products.length ? ( 
-        <div className='products'>
+      <div>
+
+      <div className='products'>
         {
             products.slice(indexofFirstProduct,indexofLastProduct).map(product=>{
             return(
                 <span key={product.id} className='products__single'>
-                    {/* {product.title} */}
                     <img src={product.thumbnail} alt={product.title}/>
                     <span>{product.title}</span>
                 </span>
             )
             })
         }
+      </div>
+
         {
          products.length>0 && <div className='pagination'>
             <button onClick={()=>{
@@ -61,7 +64,7 @@ export default function Pagination() {
                     className={`${currentPage === page ? "active" : ""}`}
                     onClick={() => setCurrentPage(page)}
                   >
-                    {page} |{" "}
+                    {page} |{"   "}
                   </span>
                 );
               })}
@@ -71,9 +74,12 @@ export default function Pagination() {
                 if(currentPage!=toatalNumberofPages)
                 setCurrentPage(currentPage+1)
             }}>Next</button>
+            
          </div>
         }
+
         </div>
+
         ): <h2>Loadingin.....</h2>
     }
     </>

@@ -31,10 +31,11 @@
     justify-content: center;
   }
   
-  .pagination > span{
+  .pagination > *{
     padding: 15px 20px;
     border: 1px solid gray;
     cursor: pointer;
+
   }
   
   .pagination__disable{
@@ -43,4 +44,10 @@
   
   .pagination__selected{
     background-color: rgb(220, 220, 220);
+  }
+
+  .active{
+    font-weight: 800;
+    font-size: 18px;  
+    color: #ff7f50;
   }
