@@ -1,5 +1,6 @@
 import React from 'react';
 import Pagination from './Pagination/Pagination';
+import SelectGrid from './SelectGrid/SelectGrid';
 // import Throttle from './ThrottleScroll/Throttle';
 // import ReactHooks from './ReactHooks/ReactHooks';
 // import FileExplorer from './FileExplorer/FileExplores';
@@ -18,7 +19,8 @@ import Pagination from './Pagination/Pagination';
 export default function Projects() {
   return (
     <>
-    <Pagination/>
+    <SelectGrid/>
+    {/* <Pagination/> */}
       {/* <Throttle/> */}
       {/* <ReactHooks/> */}
       {/* <FileExplorer/> */}
