@@ -1,5 +1,8 @@
 import React from 'react';
-import Hoc from './higherOrderComponet/Hoc';
+import ClicktoExit from './ClicktoExit/ClicktoExit';
+// import ImageSlider from './ImageSlider/ImageSlider';
+// import ContolledUncontrolled from './ContolledUncontrolldComponents/ContolledUncontrolled';
+// import Hoc from './higherOrderComponet/Hoc';
 // import Pagination from './Pagination/Pagination';
 // import SelectGrid from './SelectGrid/SelectGrid';
 // import Throttle from './ThrottleScroll/Throttle';
@@ -20,7 +23,10 @@ import Hoc from './higherOrderComponet/Hoc';
 export default function Projects() {
   return (
     <>
-      <Hoc/>
+      <ClicktoExit/>
+      {/* <ImageSlider/> */}
+      {/* <ContolledUncontrolled/> */}
+      {/* <Hoc/> */}
       {/* <SelectGrid/> */}
       {/* <Pagination/> */}
       {/* <Throttle/> */}
