@@ -71,4 +71,66 @@ let res = a.reduce((acc, current) => {
 
 console.log(res);
 ```
+# 
+## Finding max
+```
+const array = [1, 2, 3, 4, 5, 1, 20, 3, -4, 1];
+
+const result=array.reduce((acc, current)=>{
+  return  Math.max(acc, current)
+},[])
+
+console.log(result); //20
+```
+
+## Finding min
+```
+const array = [1, 2, 3, 4, 5, 1, 20, 3, -4, 1];
+
+const result=array.reduce((acc, current)=>{
+  return  Math.min(acc, current)
+},[])
+
+console.log(result); //-4
+```
+
+# 
+## Average
+```
+const array = [5, 2, 8, 1, 9];
+const sum = array.reduce((acc, current) => acc + current, 0);
+const average = sum / array.length;
+console.log("Average value:", average);
+```
+
+#
+## Remove duplicate
+```
+const array = [1, 2, 3, 1, 2, 4, 5];
+
+const uniqe=array.reduce((accu, current)=>{
+    if(!accu.includes(current)){
+        accu.push(current)
+    };
+    return accu
+},[])
+
+console.log(uniqe); 
+//[ 1, 2, 3, 4, 5 ]
+```
+
+#
+## Reversing the Array
+
+* **reduceRight** mehtod should be used or use unshift insted of push
+```
+const array = [1, 2, 3, 4, 5];
+
+const reverse=array.reduceRight((accu, current)=>{
+    accu.push(current);
+    return accu
+},[])
+
+console.log(reverse);
+```
 
