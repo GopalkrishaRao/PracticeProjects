@@ -12,11 +12,11 @@ export default function PopuupBox({setClick}) {
         document.addEventListener("keydown", onKeyDown);
 
         return ()=>document.removeEventListener("keydown", onKeyDown)
-    },[]);
+    });
 
     const handleClose= (e)=>{
-        if (e.target.className !== "popUp") {
-            e.stopPropagation();
+        if (!e.target.closest('.popUp')) {
+            // e.stopPropagation();
             setClick(false);
         }
     }

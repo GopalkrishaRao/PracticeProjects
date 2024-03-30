@@ -1,5 +1,7 @@
 import React from 'react';
-import ClicktoExit from './ClicktoExit/ClicktoExit';
+import CheckBoxDelete from './CheckBoxDelete/CheckBoxDelete';
+// import ClicktoExit from './ClicktoExit/ClicktoExit';
+// import DropDown from './DroopDownSelect/DropDown';
 // import ImageSlider from './ImageSlider/ImageSlider';
 // import ContolledUncontrolled from './ContolledUncontrolldComponents/ContolledUncontrolled';
 // import Hoc from './higherOrderComponet/Hoc';
@@ -23,7 +25,9 @@ import ClicktoExit from './ClicktoExit/ClicktoExit';
 export default function Projects() {
   return (
     <>
-      <ClicktoExit/>
+      <CheckBoxDelete/>
+      {/* <DropDown/> */}
+      {/* <ClicktoExit/> */}
       {/* <ImageSlider/> */}
       {/* <ContolledUncontrolled/> */}
       {/* <Hoc/> */}
