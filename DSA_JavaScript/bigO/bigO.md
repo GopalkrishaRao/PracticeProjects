@@ -1,0 +1,1 @@
+* Repersended as O(n) where n is the number of inputs.

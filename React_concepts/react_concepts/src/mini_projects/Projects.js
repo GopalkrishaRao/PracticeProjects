@@ -1,5 +1,6 @@
 import React from 'react';
-import CheckBoxDelete from './CheckBoxDelete/CheckBoxDelete';
+import RadioSelect from './RadioBtnSelect/RadioSelect';
+// import CheckBoxDelete from './CheckBoxDelete/CheckBoxDelete';
 // import ClicktoExit from './ClicktoExit/ClicktoExit';
 // import DropDown from './DroopDownSelect/DropDown';
 // import ImageSlider from './ImageSlider/ImageSlider';
@@ -25,7 +26,8 @@ import CheckBoxDelete from './CheckBoxDelete/CheckBoxDelete';
 export default function Projects() {
   return (
     <>
-      <CheckBoxDelete/>
+      <RadioSelect/>
+      {/* <CheckBoxDelete/> */}
       {/* <DropDown/> */}
       {/* <ClicktoExit/> */}
       {/* <ImageSlider/> */}

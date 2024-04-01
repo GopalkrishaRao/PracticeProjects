@@ -1,13 +1,12 @@
-const input = document.querySelector("input")
-const defaultText = document.getElementById("default")
-const debounceText = document.getElementById("debounce")
-const throttleText = document.getElementById("throttle")
+const defaultMouse = document.getElementById("mouseDefault")
+const debounceMouse = document.getElementById("mouseDebounce")
+const throttleMouse = document.getElementById("mouseThrotle")
 
-const updateDebounceText = debounce(() => {
-  incrementCount(debounceText)
+const updateDebounceMouse = debounce(() => {
+  incrementCount(debounceMouse)
 })
-const updateThrottleText = throttle(() => {
-  incrementCount(throttleText)
+const updateThrottleMouse = throttle(() => {
+  incrementCount(throttleMouse)
 }, 100)
 
 function debounce(cb, delay = 1000) {
@@ -48,10 +47,12 @@ function throttle(cb, delay = 1000) {
 }
 
 document.addEventListener("mousemove", e => {
-  incrementCount(defaultText)
-  updateDebounceText()
-  updateThrottleText()
+  incrementCount(defaultMouse)
+  updateDebounceMouse()
+  updateThrottleMouse()
 })
+
+
 
 function incrementCount(element) {
   element.textContent = (parseInt(element.innerText) || 0) + 1
