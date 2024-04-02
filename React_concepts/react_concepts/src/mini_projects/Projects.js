@@ -1,5 +1,6 @@
 import React from 'react';
-import Swap from './ItemSwap/Swap';
+import Debounce from './Debounceing/Debounce';
+// import Swap from './ItemSwap/Swap';
 // import RadioSelect from './RadioBtnSelect/RadioSelect';
 // import CheckBoxDelete from './CheckBoxDelete/CheckBoxDelete';
 // import ClicktoExit from './ClicktoExit/ClicktoExit';
@@ -27,7 +28,8 @@ import Swap from './ItemSwap/Swap';
 export default function Projects() {
   return (
     <>
-      <Swap/>
+      <Debounce/>
+      {/* <Swap/> */}
       {/* <RadioSelect/> */}
       {/* <CheckBoxDelete/> */}
       {/* <DropDown/> */}
