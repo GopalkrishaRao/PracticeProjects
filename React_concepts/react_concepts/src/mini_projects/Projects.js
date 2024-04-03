@@ -1,5 +1,6 @@
 import React from 'react';
-import Debounce from './Debounceing/Debounce';
+// import Debounce from './Debounceing/Debounce';
+import InfinityScroll from './InfinityScroll/InfinityScroll';
 // import Swap from './ItemSwap/Swap';
 // import RadioSelect from './RadioBtnSelect/RadioSelect';
 // import CheckBoxDelete from './CheckBoxDelete/CheckBoxDelete';
@@ -28,7 +29,8 @@ import Debounce from './Debounceing/Debounce';
 export default function Projects() {
   return (
     <>
-      <Debounce/>
+    <InfinityScroll/>
+      {/* <Debounce/> */}
       {/* <Swap/> */}
       {/* <RadioSelect/> */}
       {/* <CheckBoxDelete/> */}
