@@ -1,6 +1,7 @@
 import React from 'react';
+import FetchCountry from './FetchCountryDetails/FetchCountry';
 // import Debounce from './Debounceing/Debounce';
-import InfinityScroll from './InfinityScroll/InfinityScroll';
+// import InfinityScroll from './InfinityScroll/InfinityScroll';
 // import Swap from './ItemSwap/Swap';
 // import RadioSelect from './RadioBtnSelect/RadioSelect';
 // import CheckBoxDelete from './CheckBoxDelete/CheckBoxDelete';
@@ -29,7 +30,8 @@ import InfinityScroll from './InfinityScroll/InfinityScroll';
 export default function Projects() {
   return (
     <>
-    <InfinityScroll/>
+    <FetchCountry/>
+      {/*<InfinityScroll/> */}
       {/* <Debounce/> */}
       {/* <Swap/> */}
       {/* <RadioSelect/> */}
