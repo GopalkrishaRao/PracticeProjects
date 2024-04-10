@@ -1,54 +1,59 @@
 import React, { useEffect, useState } from 'react';
 
+const useDebounce = (input, delay=500)=>{
+    const [debounceValue, setDevounceValue]=useState("");
+    useEffect(()=>{
+
+        const timer= setTimeout(()=>{
+            setDevounceValue(input)
+        },delay);
+
+        return ()=>clearTimeout(timer)
+
+    },[input, delay])
+
+    return debounceValue;
+};
+
 
 export default function FetchCountry() {
-    const [country, setCountry] = useState("");
-  const [countryInfo, setCountryInfo] = useState([]);
+    const [country, setCoutry]=useState("");
+    const [contDet, setContDet]=useState([]);
+    const debounceValue = useDebounce(country);
 
-  const updateInput = (e) => {
-    setCountry(e.target.value);
-  };
-  const fetchData = async (url) => {
-    try {
-      const data = await fetch(url);
-      const response = await data.json();
-      setCountryInfo(response);
-      console.log(response);
-    } catch (e) {
-      console.log(e);
+    
+    const handleInputChange=(e)=>{
+        setCoutry(e.target.value)
+    };
+
+    const fetchData=async(countryName)=>{
+        const data= await fetch(`https://restcountries.com/v3.1/name/${countryName}`);
+        const res= await data.json();
+        setContDet(res);
+        console.log(contDet);
     }
-  };
 
-  useEffect(() => {
-    fetchData(`https://restcountries.com/v3.1/name/${country}`);
-  }, [country]);
-  return (
-    <div className="App">
-      <h1>Country Information</h1>
-      <input
-        placeholder="Enter Country Name"
-        className="inpCou"
-        onChange={updateInput}
-      />
-      <button
-        onClick={() =>
-          fetchData(`https://restcountries.com/v3.1/name/${country}`)
-        }
-      >
-        Search
-      </button>
-      <div>
-        {countryInfo.length > 0 ? (
-          <>
-            <p> Name: {countryInfo[1].name.common}</p>
-            <p>Capital: {countryInfo[1].capital[0]}</p>
-              <img src={countryInfo[1].flags.png} alt="flag" />
-            
-          </>
-        ) : (
-          <p>Loading....</p>
-        )}
-      </div>
-    </div>
-  );
+    useEffect(()=>{
+        fetchData(debounceValue)
+    },[debounceValue])
+
+   return(
+    <>
+    <h2>Search Country</h2>
+    <input 
+        type='text'
+        placeholder='Enter a country'
+        onChange={handleInputChange}
+        />
+    {
+        contDet.length ? (
+        <div>
+            {contDet[1].capital[0]}
+        </div>):(
+            <h2>Enter county name to get Details</h2>
+        )
+    }
+    
+    </>
+   )
 }
