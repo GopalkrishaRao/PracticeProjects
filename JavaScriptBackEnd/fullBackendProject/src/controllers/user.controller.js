@@ -5,6 +5,7 @@ import {uploadOnCloudinary} from "../utils/cloudinary.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import jwt from "jsonwebtoken";
 import { response } from "express";
+import mongoose from "mongoose";
 
 
 // method to create token later used in login user
@@ -205,8 +206,9 @@ const logoutUser = asyncHandler( async(req, res)=>{
      await User.findByIdAndUpdate(
           req.user._id,
           {
-               $set:{
-                    refreshToken:undefined
+               $unset:{
+                    refreshToken:1
+                    // removes the field from the document
                }
           },
           {
@@ -501,6 +503,7 @@ const updateUserAvatar = asyncHandler(async(req, res) => {
          new ApiResponse(200, channel[0], "User channel fetched successfully")
      );
  });
+ 
  
  const getWatchHistory = asyncHandler(async(req, res) => {
      const user = await User.aggregate([
