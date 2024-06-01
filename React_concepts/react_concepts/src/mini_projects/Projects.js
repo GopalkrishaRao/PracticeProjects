@@ -1,5 +1,6 @@
 import React from 'react';
-import FetchCountry from './FetchCountryDetails/FetchCountry';
+import Toast from './Toaster/Toast';
+// import FetchCountry from './FetchCountryDetails/FetchCountry';
 // import Debounce from './Debounceing/Debounce';
 // import InfinityScroll from './InfinityScroll/InfinityScroll';
 // import Swap from './ItemSwap/Swap';
@@ -30,7 +31,8 @@ import FetchCountry from './FetchCountryDetails/FetchCountry';
 export default function Projects() {
   return (
     <>
-    <FetchCountry/>
+    <Toast/>
+      {/* <FetchCountry/> */}
       {/*<InfinityScroll/> */}
       {/* <Debounce/> */}
       {/* <Swap/> */}
