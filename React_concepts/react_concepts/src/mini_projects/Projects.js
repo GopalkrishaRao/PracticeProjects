@@ -1,5 +1,5 @@
 import React from 'react';
-import Toast from './Toaster/Toast';
+// import Toast from './Toaster/Toast';
 // import FetchCountry from './FetchCountryDetails/FetchCountry';
 // import Debounce from './Debounceing/Debounce';
 // import InfinityScroll from './InfinityScroll/InfinityScroll';
@@ -23,7 +23,7 @@ import Toast from './Toaster/Toast';
 // import GridLight from './GridLights/GridLight';
 // import  Progressbar  from './ProgressBar/Progressbar';
 // import MainCounter from './ReduxCounter/MainCounter';
-// import ReactForm from './FormHandling/ReactForm';
+import ReactForm from './FormHandling/ReactForm';
 // import RandomJoke from './Random Joke/RandomJoke';
 
 
@@ -31,7 +31,7 @@ import Toast from './Toaster/Toast';
 export default function Projects() {
   return (
     <>
-    <Toast/>
+    {/* <Toast/> */}
       {/* <FetchCountry/> */}
       {/*<InfinityScroll/> */}
       {/* <Debounce/> */}
@@ -56,7 +56,7 @@ export default function Projects() {
       {/* <Progressbar/> */}
       {/* <MainCounter/> */}
       {/* <RandomJoke/> */}
-      {/* <ReactForm/> */}
+      <ReactForm/>
     </>
   )
 }
