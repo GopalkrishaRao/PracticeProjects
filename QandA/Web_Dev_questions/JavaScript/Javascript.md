@@ -493,10 +493,12 @@ console.log(message);
 #
 ## [Callback queueu]
 * Callback queueu  is where the callback function gets pushed to, and waits for the execution.
+* Macro tasks include events like setTimeout, setInterval, setImmediate, I/O operations, and UI rendering.
+
 #
 ## [Microtask Queue]:
 * Microtask Queue is similar to the Callback Queue(macrotask queue), but  has a higher priority than the callback queue.
-
+* Include Promise callbacks, process.nextTick (Node.js), and MutationObserver (browser environment).
 *  All the callback functions coming through promises and mutation observer will go inside the microtask queue. 
 
 #
